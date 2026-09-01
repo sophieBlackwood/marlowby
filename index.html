@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marlowby/title>
+  <link rel="stylesheet" href="https://use.typekit.net/rig8hkd.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="icon" type="image/x-icon" href="icon_transparent.png"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-container">
+
+      <!-- Hamburger Menu -->
+      <button class="hamburger-menu" onclick="openNav()" aria-label="Open menu">
+        &#9776;
+      </button> 
+
+      <!-- Logo -->
+      <a href="index.html" class="logo-link">
+        <img class="logo" id="logoImage" src="logo_text.png" alt="Seaglass Sanctuary Logo">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav">
+  <ul class="nav-links">
+    <li class="hide-on-mid"><a href="index.html">Home</a></li>
+</li>
+    
+    <!-- For Mid Size Screens -->
+    <li class="nav-item more-dropdown">
+      <a>More <span class="caret">▼</span></a>
+      <ul class="dropdown-menu more-menu"></ul>
+  </ul>
+</nav>
+
+
+    <!-- Side Nav (Mobile) -->
+<div id="mySidenav" class="sidenav">
+  <div class="sidenav-header">
+    <img src="logo_text.png" class="sidenav-logo" alt="Seaglass Sanctuary Logo">
+    <button class="closebtn" onclick="closeNav()" aria-label="Close menu">×</button>
+  </div>
+  <hr>
+  <a href="index.html">Home</a>
+  </header>
+ <main>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h2>Marlowby</h2>
+      </div>
+    </section>
+
+  
+  <!-- Footer -->
+  <footer>
+    <p> This website exists for the purpose of a Business Professionals of America competitive event. It is not to be used for subscription purposes and was made by a group of secondary students for competitive purposes. </p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+
+</body>
+</html>

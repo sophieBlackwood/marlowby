@@ -167,11 +167,11 @@ p {
 
   /* Full-width Mask applied directly to the video layer */
   -webkit-mask: 
-    radial-gradient(78.3px at 50% calc(100% - 110.7px), #000 99%, #0000 101%) calc(50% - 108px) 0/216px 100%,
-    radial-gradient(78.3px at 50% calc(100% + 56.7px), #0000 99%, #000 101%) 50% calc(100% - 54px)/216px 100% repeat-x;
-  mask: 
-    radial-gradient(78.3px at 50% calc(100% - 110.7px), #000 99%, #0000 101%) calc(50% - 108px) 0/216px 100%,
-    radial-gradient(78.3px at 50% calc(100% + 56.7px), #0000 99%, #000 101%) 50% calc(100% - 54px)/216px 100% repeat-x;
+    radial-gradient(213.01px at 50% calc(100% - 291.6px),#000 99%,#0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% calc(100% + 183.6px),#0000 99%,#000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
+   mask: 
+    radial-gradient(213.01px at 50% calc(100% - 291.6px),#000 99%,#0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% calc(100% + 183.6px),#0000 99%,#000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
 }
 
 .video-background iframe {

@@ -145,7 +145,7 @@ p {
   background-color: #6c792d;
 }
 
-/* Ensure the hero section allows absolute positioning for children */
+/* YouTube Video Hero Section */
 .hero-section {
   position: relative;
   min-height: calc(100vh - 58px);
@@ -156,26 +156,6 @@ p {
   overflow: hidden;
 }
 
-/* Wavy Bottom Divider */
-.hero-section::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 60px; /* Adjust height to scale the wave depth */
-  background-color: #323d7d; /* Matches the background color of the next section */
-  z-index: 4; /* Sits above the video background and dark overlay */
-
-  /* Wavy Mask */
-  -webkit-mask: 
-    radial-gradient(78.3px at 50% calc(100% - 110.7px), #000 99%, #0000 101%) calc(50% - 108px) 0/216px 100%,
-    radial-gradient(78.3px at 50% calc(100% + 56.7px), #0000 99%, #000 101%) 50% calc(100% - 54px)/216px 100% repeat-x;
-  mask: 
-    radial-gradient(78.3px at 50% calc(100% - 110.7px), #000 99%, #0000 101%) calc(50% - 108px) 0/216px 100%,
-    radial-gradient(78.3px at 50% calc(100% + 56.7px), #0000 99%, #000 101%) 50% calc(100% - 54px)/216px 100% repeat-x;
-}
-
 .video-background {
   position: absolute;
   top: 0;
@@ -184,6 +164,14 @@ p {
   height: 100%;
   pointer-events: none;
   z-index: 1;
+
+  /* Full-width Mask applied directly to the video layer */
+  -webkit-mask: 
+    radial-gradient(78.3px at 50% calc(100% - 110.7px), #000 99%, #0000 101%) calc(50% - 108px) 0/216px 100%,
+    radial-gradient(78.3px at 50% calc(100% + 56.7px), #0000 99%, #000 101%) 50% calc(100% - 54px)/216px 100% repeat-x;
+  mask: 
+    radial-gradient(78.3px at 50% calc(100% - 110.7px), #000 99%, #0000 101%) calc(50% - 108px) 0/216px 100%,
+    radial-gradient(78.3px at 50% calc(100% + 56.7px), #0000 99%, #000 101%) 50% calc(100% - 54px)/216px 100% repeat-x;
 }
 
 .video-background iframe {
@@ -206,6 +194,7 @@ p {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 2;
+  pointer-events: none;
 }
 
 .hero-text {

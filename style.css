@@ -1,3 +1,11 @@
+/* Temp colors:
+Light Carmine Pink (#A24558), 
+Mushroom Melt (#DFBC82), 
+Mint Spicy (#6C792D), 
+Moss Green (#87945B), 
+Vintage Lace (#E3DFC9),
+Classic Navy (#323D7D) */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +14,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f8f7f2;
-  color: #24343b;
+  background-color: #E3DFC9;
+  color: #323D7D;
   line-height: 1.6;
 }
 
@@ -23,8 +31,7 @@ img {
 
 .navbar {
   width: 100%;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
+  background-color:#DFBC82;
 }
 
 .nav-container {
@@ -56,7 +63,7 @@ img {
 .nav-links a {
   font-size: 16px;
   font-weight: 600;
-  color: #24343b;
+  color: #A24558;
   transition: color 0.2s ease;
 }
 
@@ -96,8 +103,8 @@ img {
 }
 
 footer {
-  background-color: #24343b;
-  color: #ffffff;
+  background-color: #6C792D;
+  color: #E3DFC9;
   padding: 30px 20px;
   text-align: center;
   font-size: 13px;

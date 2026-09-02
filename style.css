@@ -31,8 +31,12 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
-  font-family: bebas-neue, sans-serif;
+h1 {
+  font-family: "Caacupe One", sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+ font-family: "Slabo 13px", serif;
   letter-spacing: 3px;
 }
 

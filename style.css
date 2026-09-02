@@ -1,13 +1,12 @@
 /*
 ========================================
-  MARLOWBY COLOR PALETTE
+  MARLOWBY UPDATED COLOR PALETTE
   
-  Light Carmine Pink: #A24558
-  Mushroom Melt:      #DFBC82
-  Mint Spicy:         #6C792D
-  Moss Green:         #87945B
-  Vintage Lace:       #E3DFC9
-  Classic Navy:       #323D7D
+  Deep Terracotta (Primary Accent): #B85042
+  Warm Cream (Base Background):     #E7E8D1
+  Sage Olive (Secondary Accent):   #A7B8A8
+  Dark Charcoal (Text/Navy Alt):    #2F3E46
+  Off-White (Light Text/Card BG):   #F7F9F6
 ========================================
 */
 
@@ -22,8 +21,8 @@ html,
 body {
   height: 100%;
   margin: 0;
-  background-color: #323d7d;
-  color: #e3dfc9;
+  background-color: #2f3e46;
+  color: #f7f9f6;
   scroll-behavior: smooth;
 }
 
@@ -48,7 +47,7 @@ p {
 
 /* Navigation Bar */
 .navbar {
-  background-color: #a24558;
+  background-color: #b85042;
   position: fixed;
   top: 0;
   left: 0;
@@ -105,7 +104,7 @@ p {
   align-items: center;
   height: 100%;
   padding: 0 16px;
-  color: #e3dfc9;
+  color: #f7f9f6;
   text-align: center;
   text-decoration: none;
   font-size: 18px;
@@ -113,8 +112,8 @@ p {
 }
 
 .navbar a:hover {
-  background-color: #6c792d;
-  color: #e3dfc9;
+  background-color: #a7b8a8;
+  color: #2f3e46;
 }
 
 .highlight-link {
@@ -122,27 +121,28 @@ p {
   top: 0;
   right: 0;
   display: block;
-  color: #e3dfc9;
+  color: #f7f9f6;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 18px;
   font-family: "lato", sans-serif;
-  background-color: #a24558;
+  background-color: #b85042;
 }
 
 .hamburger-menu {
   display: none;
   border: none;
   background: transparent;
-  color: #e3dfc9;
+  color: #f7f9f6;
   font-size: 26px;
   cursor: pointer;
   padding: 10px 15px;
 }
 
 .hamburger-menu:hover {
-  background-color: #6c792d;
+  background-color: #a7b8a8;
+  color: #2f3e46;
 }
 
 /* YouTube Video Hero Section */
@@ -165,11 +165,11 @@ p {
   pointer-events: none;
   z-index: 1;
 
-  /* Full-width Mask applied directly to the video layer */
+  /* Mask pattern layer */
   -webkit-mask: 
     radial-gradient(213.01px at 50% calc(100% - 291.6px),#000 99%,#0000 101%) calc(50% - 216px) 0/432px 100%,
     radial-gradient(213.01px at 50% calc(100% + 183.6px),#0000 99%,#000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
-   mask: 
+  mask: 
     radial-gradient(213.01px at 50% calc(100% - 291.6px),#000 99%,#0000 101%) calc(50% - 216px) 0/432px 100%,
     radial-gradient(213.01px at 50% calc(100% + 183.6px),#0000 99%,#000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
 }
@@ -192,7 +192,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(47, 62, 70, 0.5);
   z-index: 2;
   pointer-events: none;
 }
@@ -201,7 +201,7 @@ p {
   position: relative;
   z-index: 3;
   text-align: center;
-  color: #e3dfc9;
+  color: #f7f9f6;
   padding: 30px 40px;
   font-size: 20px;
   max-width: 700px;
@@ -223,25 +223,25 @@ p {
   outline: 0;
   display: inline-block;
   padding: 12px 28px;
-  color: #e3dfc9;
-  background-color: #a24558;
+  color: #f7f9f6;
+  background-color: #b85042;
   text-align: center;
   cursor: pointer;
   text-decoration: none;
   font-family: "lato", sans-serif;
   font-size: 16px;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .hero-text a.btn:hover {
-  background-color: #6c792d;
-  color: #e3dfc9;
+  background-color: #a7b8a8;
+  color: #2f3e46;
 }
 
 /* Footer */
 footer {
-  background-color: #a24558;
-  color: #e3dfc9;
+  background-color: #b85042;
+  color: #f7f9f6;
   text-align: center;
   padding: 20px 30px;
 }

@@ -237,6 +237,188 @@ p {
   color: #2f3e46;
 }
 
+/* Featured Box */
+.featured-product {
+  color: #0000cd;
+  padding: 16px 0 20px;
+}
+
+@media (width >= 600px) {
+  .page-template-page-home .featured-product {
+    padding: 64px 0 16px;
+  }
+
+  .page-template-page-home .featured-product .top-section {
+    text-align: left;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+
+  .page-template-page-home .featured-product .top-section .image {
+    width: 45%;
+  }
+
+  .page-template-page-home .featured-product .top-section .content {
+    width: 50%;
+  }
+
+  .page-template-page-home .featured-product .top-section .buttons {
+    margin-left: 0;
+  }
+}
+
+.page-template-page-home .featured-product .top-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.page-template-page-home .featured-product .top-section .image {
+  margin-bottom: .75rem;
+  position: relative;
+}
+
+.page-template-page-home .featured-product .top-section .content h3 {
+  margin-bottom: 0;
+}
+
+.page-template-page-home .featured-product .top-section .content p {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+.page-template-page-home .featured-product .top-section .buttons {
+  flex-direction: column;
+  gap: .75rem;
+  width: fit-content;
+  min-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.page-template-page-home .featured-product .top-section .buttons > p {
+  white-space: nowrap;
+  flex: 1;
+  width: 100%;
+  margin: 0;
+}
+
+.page-template-page-home .featured-product .top-section .buttons > p a {
+  margin: 0;
+}
+
+.page-template-page-home .featured-product.primary-color {
+  color: #fff;
+  background: #0000cd;
+}
+
+.page-template-page-home .featured-product.primary-color h3,
+.page-template-page-home .featured-product.primary-color h4 {
+  color: #fff;
+}
+
+.page-template-page-home .featured-product.primary-color .top-section .cta-star {
+  color: #0000cd;
+  text-transform: uppercase;
+  text-align: center;
+  aspect-ratio: 1;
+  clip-path: polygon(
+    100% 50%, 86.14% 61.74%, 90.45% 79.39%, 72.34% 80.74%, 65.45% 97.55%, 
+    50% 88%, 34.55% 97.55%, 27.66% 80.74%, 9.55% 79.39%, 13.86% 61.74%, 
+    0% 50%, 13.86% 38.26%, 9.55% 20.61%, 27.66% 19.26%, 34.55% 2.45%, 
+    50% 12%, 65.45% 2.45%, 72.34% 19.26%, 90.45% 20.61%, 86.14% 38.26%
+  );
+  background: #fff;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+  font-family: Fredoka One, sans-serif;
+  font-size: 13px;
+  line-height: 1.2;
+  display: flex;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+@media (width >= 600px) {
+  .page-template-page-home .featured-product.primary-color .top-section .cta-star {
+    width: 115px;
+    height: 115px;
+    font-size: 16px;
+    top: -43px;
+    left: 30px;
+  }
+}
+
+.page-template-page-home .featured-product.primary-color .top-section .cta-star span {
+  max-width: 100px;
+}
+
+/* Button */
+.btn, 
+.btn-large {
+  display: block;
+  vertical-align: middle;
+  border: none;
+  border-radius: 50px;
+  height: 46px;
+  padding: 0 28px;
+  line-height: 46px;
+  font-size: 20px;
+  font-family: Fredoka One, sans-serif;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: .75px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .2s ease-out;
+}
+
+.btn-block {
+  display: block !important;
+}
+
+.btn.w-border, 
+.btn-large.w-border {
+  border: 3px solid #fff;
+  line-height: 40px;
+}
+
+.page-template-page-home .featured-product.primary-color .buttons p:first-of-type a {
+  color: #0000cd;
+  background: #fff;
+  border-color: #0000cd;
+}
+
+.page-template-page-home .featured-product.primary-color .buttons p:last-of-type a {
+  color: #fff;
+  background: #0000cd;
+  border-width: 2px;
+  border-color: #fff;
+}
+
+.btn:hover:not(.no-hover-underline) {
+  text-decoration: underline;
+}
+
+@media (width >= 600px) {
+  .btn, 
+  .btn-large {
+    height: 55px;
+    font-size: 20px;
+    line-height: 55px;
+    letter-spacing: 1px;
+  }
+
+  .btn.w-border.btn-large {
+    height: 55px;
+    line-height: 50px;
+  }
+}
+
 /* Footer */
 footer {
   background-color: #b85042;

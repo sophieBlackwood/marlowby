@@ -17,36 +17,35 @@
 </head>
 <body>
 
- <!-- Nav Bar -->
-	<div class="navbar">
-		<img id="logoImage" src="Logos/logo_text2_transparent.png" alt="logo" height="30">
-		<div class="dropdown">
-			<button class="dropbtn" href="index.html#home" id="homeBtn">Home
-				<i class="fa fa-caret-down"></i>
-			</button>
-		</div>
-		<a href="index.html">Home</a>
-		<a href="shop.html">Shop</a>
-		<a href="https://game-day-grill-bpa-project.square.site/#items" target="_blank" class="highlight-link">Subscribe</a>
-	</div>
-	
-<!-- Side Nav for smaller screens -->
-	<div class="hamburger-menu" onclick="openNav()">&#9776; <img src="Logos/logo_text2_transparent.png" alt="logo image" class="sidenav-img"></div>
-	<div id="mySidenav" class="sidenav">
-		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
-		<hr>
-		<a href="index.html">Home</a>
-		<a href="shop.html">Shop</a>
-		<a href="https://game-day-grill-bpa-project.square.site/#items" target="_blank" class="special-link">Subscribe</a>
-	</div>
-
+  <!-- Nav Bar -->
+  <header class="navbar">
+    <a href="index.html" class="logo-link">
+      <img id="logoImage" src="Logos/logo_text2_transparent.png" alt="Marlowby logo" height="30">
+    </a>
+    <nav class="desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="https://game-day-grill-bpa-project.square.site/#items" target="_blank" rel="noopener noreferrer" class="highlight-link">Subscribe</a>
+    </nav>
+  </header>
+  
+  <!-- Side Nav for smaller screens -->
+  <button class="hamburger-menu" onclick="openNav()" aria-label="Open menu">
+    &#9776; <img src="Logos/logo_text2_transparent.png" alt="logo image" class="sidenav-img">
+  </button>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <hr>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="https://game-day-grill-bpa-project.square.site/#items" target="_blank" rel="noopener noreferrer" class="special-link">Subscribe</a>
+  </div>
 
   <section class="hero-section">
     <div class="video-background">
       <iframe 
         src="https://www.youtube-nocookie.com/embed/QDia3e12czc?autoplay=1&mute=1&controls=0&loop=1&playlist=QDia3e12czc&playsinline=1" 
         title="Background video"
-        frameborder="0" 
         allow="autoplay; encrypted-media" 
         allowfullscreen>
       </iframe>

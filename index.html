@@ -17,26 +17,29 @@
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="nav-container">
+ <!-- Nav Bar -->
+	<div class="navbar">
+		<img id="logoImage" src="Logos/logo_text2_transparent.png" alt="logo" height="30">
+		<div class="dropdown">
+			<button class="dropbtn" href="index.html#home" id="homeBtn">Home
+				<i class="fa fa-caret-down"></i>
+			</button>
+		</div>
+		<a href="index.html">Home</a>
+		<a href="shop.html">Shop</a>
+		<a href="https://game-day-grill-bpa-project.square.site/#items" target="_blank" class="highlight-link">Subscribe</a>
+	</div>
+	
+<!-- Side Nav for smaller screens -->
+	<div class="hamburger-menu" onclick="openNav()">&#9776; <img src="Logos/logo_text2_transparent.png" alt="logo image" class="sidenav-img"></div>
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
+		<hr>
+		<a href="index.html">Home</a>
+		<a href="shop.html">Shop</a>
+		<a href="https://game-day-grill-bpa-project.square.site/#items" target="_blank" class="special-link">Subscribe</a>
+	</div>
 
-      <a href="index.html" class="logo-link">
-        <img
-          class="logo"
-          id="logoImage"
-          src="logo_text.png"
-          alt="Marlowby Logo">
-      </a>
-
-      <nav class="desktop-nav">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="#subscribe">Subscribe</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
   <section class="hero-section">
     <div class="video-background">

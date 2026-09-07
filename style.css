@@ -146,7 +146,7 @@ p, a, span, button {
   font-size: 32px;
 }
 
-/* YouTube Video Hero Section */
+/* YouTube Video Hero Section (Dark Charcoal) */
 .hero-section {
   position: relative;
   min-height: calc(100vh - 58px);
@@ -239,9 +239,14 @@ p, a, span, button {
   color: #2f3e46;
 }
 
-/* Featured Box Section (Color: Warm Cream) */
+/* ===================================================
+   SINGLE MAIN SECTION (Warm Cream Background)
+   Includes "This Month's Box" AND "What's Inside" Carousel
+=================================================== */
+
+/* Top Part: Featured Product */
 .featured-product {
-  padding: 64px 20px;
+  padding: 64px 20px 20px;
   background-color: #E7E8D1;
   color: #2f3e46;
 }
@@ -296,20 +301,20 @@ p, a, span, button {
   color: #2f3e46;
 }
 
-/* Featured Boxes Carousel Section (Color: Dark Charcoal) */
+/* Bottom Part: Featured Boxes Carousel (Same Warm Cream BG) */
 .blog-section {
-  padding: 3rem 1rem;
+  padding: 2rem 1rem 4rem;
   text-align: center;
   overflow: hidden; 
-  background-color: #2f3e46;
-  color: #f7f9f6;
+  background-color: #E7E8D1;
+  color: #2f3e46;
   position: relative;
 }
 
 .blog-section h3 {
   font-size: 28px;
   margin-bottom: 15px;
-  color: #f7f9f6;
+  color: #2f3e46;
 }
 
 .blog-carousel {
@@ -342,11 +347,11 @@ p, a, span, button {
 
 .blog-card-inner {
   width: 100%;
-  background-color: #1e282d;
+  background-color: #2f3e46;
   padding: 1rem;
   border-radius: 8px; 
-  border: 1px solid rgba(247, 249, 246, 0.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(47, 62, 70, 0.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   color: #f7f9f6;
   text-align: left;
   display: flex;
@@ -357,7 +362,7 @@ p, a, span, button {
 
 .blog-card-inner:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
 
 /* Box Image Container */
@@ -397,7 +402,7 @@ p, a, span, button {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
 }
 
@@ -446,13 +451,15 @@ p, a, span, button {
   padding: 6px 14px;
 }
 
-/* Mission Section (Color: Sage Olive) */
+/* ===================================================
+   MISSION SECTION (Sage Olive Background)
+=================================================== */
 .mission-section {
   display: flex;
   align-items: center;
   background-color: #A7B8A8;
   color: #2f3e46;
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
 .mission-image {
@@ -556,7 +563,7 @@ p, a, span, button {
   transform: translateY(-2px);
 }
 
-/* Footer Styles */
+/* Footer Styles (Dark Charcoal) */
 .site-footer {
   background-color: #1e282d;
   color: #f7f9f6;
@@ -646,7 +653,7 @@ p, a, span, button {
   }
 
   .blog-section {
-    padding: 2.5rem 0.5rem;
+    padding: 1.5rem 0.5rem 3rem;
   }
 
   .blog-card {

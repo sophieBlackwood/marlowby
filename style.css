@@ -165,13 +165,6 @@ p, a, span, button {
   height: 100%;
   pointer-events: none;
   z-index: 1;
-
-  -webkit-mask: 
-    radial-gradient(213.01px at 50% calc(100% - 291.6px),#000 99%,#0000 101%) calc(50% - 216px) 0/432px 100%,
-    radial-gradient(213.01px at 50% calc(100% + 183.6px),#0000 99%,#000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
-  mask: 
-    radial-gradient(213.01px at 50% calc(100% - 291.6px),#000 99%,#0000 101%) calc(50% - 216px) 0/432px 100%,
-    radial-gradient(213.01px at 50% calc(100% + 183.6px),#0000 99%,#000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
 }
 
 .video-background iframe {

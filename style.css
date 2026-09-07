@@ -289,6 +289,63 @@ p {
   line-height: 1.6;
 }
 
+/* Social icons - sticky nav bar */
+.icon-bar {
+	position: fixed;
+	bottom: 0%;
+	left: 0%;
+}
+
+.icon-bar a {
+	display: block;
+	text-align: center;
+	padding: 10px;
+	transition: all 0.3s ease;
+	color: #f9f9f9;
+	font-size: 16px;
+}
+
+/* Individual colors on icons */
+.twitter {
+  background: #55ACEE;
+}
+	
+.facebook {
+	background: #3B5998; 
+}
+
+.instagram {
+  background: linear-gradient(45deg, #E4405F, #405DE6);
+}
+
+.email {
+  background: linear-gradient(45deg, #a3000f, #d71e2d);
+}
+
+/* Scroll to top button */
+#scrollToTopBtn {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background-color: #D71E2D;
+	color: #F9F9F9;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	font-size: 20px;
+	z-index: 1000;
+	display: none;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+
+#scrollToTopBtn:hover {
+	background-color: #a3000f;
+}
+
+
 @media screen and (min-width: 768px) {
   .featured-product .top-section {
     flex-direction: row;

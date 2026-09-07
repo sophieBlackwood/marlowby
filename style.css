@@ -146,7 +146,9 @@ p, a, span, button {
   font-size: 32px;
 }
 
-/* YouTube Video Hero Section (Dark Charcoal) */
+/* ---------------------------------------------------
+   HERO SECTION (Dark Charcoal: #2F3E46)
+--------------------------------------------------- */
 .hero-section {
   position: relative;
   min-height: calc(100vh - 58px);
@@ -158,6 +160,7 @@ p, a, span, button {
   background-color: #2f3e46;
 }
 
+/* Top Wave Masking */
 .video-background {
   position: absolute;
   top: 0;
@@ -239,12 +242,11 @@ p, a, span, button {
   color: #2f3e46;
 }
 
-/* ===================================================
-   SINGLE MAIN SECTION (Warm Cream Background)
-   Includes "This Month's Box" AND "What's Inside" Carousel
-=================================================== */
+/* ---------------------------------------------------
+   COMBINED FEATURED SECTION (Warm Cream: #E7E8D1)
+   Framed by Top Squiggle (Video) & Bottom Squiggle (Mask)
+--------------------------------------------------- */
 
-/* Top Part: Featured Product */
 .featured-product {
   padding: 64px 20px 20px;
   background-color: #E7E8D1;
@@ -301,14 +303,22 @@ p, a, span, button {
   color: #2f3e46;
 }
 
-/* Bottom Part: Featured Boxes Carousel (Same Warm Cream BG) */
+/* Bottom Half of Combined Warm Cream Section */
 .blog-section {
-  padding: 2rem 1rem 4rem;
+  padding: 2rem 1rem 80px;
   text-align: center;
   overflow: hidden; 
   background-color: #E7E8D1;
   color: #2f3e46;
   position: relative;
+
+  /* Bottom Wave Mask applied directly to the base section */
+  -webkit-mask: 
+    radial-gradient(213.01px at 50% calc(100% - 108px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% calc(100% + 36px), #0000 99%, #000 101%) 50% calc(100% - 36px)/432px 100% repeat-x;
+  mask: 
+    radial-gradient(213.01px at 50% calc(100% - 108px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% calc(100% + 36px), #0000 99%, #000 101%) 50% calc(100% - 36px)/432px 100% repeat-x;
 }
 
 .blog-section h3 {
@@ -365,7 +375,6 @@ p, a, span, button {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
 
-/* Box Image Container */
 .box-card-image {
   width: 100%;
   height: 130px;
@@ -451,15 +460,18 @@ p, a, span, button {
   padding: 6px 14px;
 }
 
-/* ===================================================
-   MISSION SECTION (Sage Olive Background)
-=================================================== */
+/* ---------------------------------------------------
+   MISSION SECTION (Sage Olive: #A7B8A8)
+--------------------------------------------------- */
 .mission-section {
   display: flex;
   align-items: center;
   background-color: #A7B8A8;
   color: #2f3e46;
   padding: 60px 20px;
+  margin-top: -40px; /* Slight offset to allow bottom mask transition to render cleanly */
+  position: relative;
+  z-index: 0;
 }
 
 .mission-image {
@@ -489,13 +501,17 @@ p, a, span, button {
   color: #2f3e46;
 }
 
+.mission-text p {
+  color: #2f3e46;
+}
+
 .mission-text a {
   text-decoration: none;
   color: #b85042;
   font-weight: bold;
 }
 
-/* Social Icons (Sticky Corner) */
+/* Sticky Social Icons Bar */
 .icon-bar {
   position: fixed;
   bottom: 15px;
@@ -563,7 +579,9 @@ p, a, span, button {
   transform: translateY(-2px);
 }
 
-/* Footer Styles (Dark Charcoal) */
+/* ---------------------------------------------------
+   FOOTER (Dark Charcoal/Navy: #1E282D)
+--------------------------------------------------- */
 .site-footer {
   background-color: #1e282d;
   color: #f7f9f6;
@@ -653,7 +671,7 @@ p, a, span, button {
   }
 
   .blog-section {
-    padding: 1.5rem 0.5rem 3rem;
+    padding: 1.5rem 0.5rem 60px;
   }
 
   .blog-card {

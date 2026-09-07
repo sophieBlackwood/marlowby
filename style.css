@@ -450,6 +450,48 @@ p, a, span, button {
     radial-gradient(126px at 50% -101.25px, #0000 99%, #000 101%) 50% 75px/300px 100% repeat-x;
 }
 
+/* Mission Section */
+.mission-section {
+  display: flex;
+  align-items: center;
+  background-color: #A7B8A8;
+  color: #2f3e46;
+  padding: 60px 20px;
+}
+
+.mission-image {
+  flex: 1;
+  padding: 20px;
+}
+
+.mission-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.mission-text {
+  flex: 1;
+  padding: 20px;
+  padding-left: 50px;
+  text-align: left;
+  text-decoration: none;
+  font-size: 18px;
+  color: #2f3e46;
+}
+
+.mission-text h1 {
+  margin-top: 0;
+  color: #2f3e46;
+}
+
+.mission-text a {
+  text-decoration: none;
+  color: #b85042;
+  font-weight: bold;
+}
+
 /* Bottom Wave Mask */
 .box-bottom-wave {
   -webkit-mask: 

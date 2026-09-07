@@ -179,11 +179,11 @@ p, a, span, button {
   border: none;
 
   -webkit-mask: 
-    radial-gradient(213.01px at 50% calc(100% - 291.6px),#000 99%,#0000 101%) calc(50% - 216px) 0/432px 100%,
-    radial-gradient(213.01px at 50% calc(100% + 183.6px),#0000 99%,#000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
+    radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
   mask: 
-    radial-gradient(213.01px at 50% calc(100% - 291.6px),#000 99%,#0000 101%) calc(50% - 216px) 0/432px 100%,
-    radial-gradient(213.01px at 50% calc(100% + 183.6px),#0000 99%,#000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
+    radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
 }
 
 .hero-section::after {
@@ -292,11 +292,10 @@ p, a, span, button {
   line-height: 1.6;
 }
 
-/* Featured Boxes Carousel Section (Compacted) */
+/* Featured Boxes Carousel Section */
 .blog-section {
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 4rem;
   text-align: center;
-  overflow: hidden; 
   background-color: #A7B8A8;
   color: #f7f9f6;
 }
@@ -304,6 +303,7 @@ p, a, span, button {
 .blog-section h3 {
   font-size: 28px;
   margin-bottom: 15px;
+  color: #2f3e46;
 }
 
 .blog-carousel {
@@ -396,16 +396,16 @@ p, a, span, button {
 }
 
 .blog-carousel-btn.prev {
-  left: 5px;
+  left: -15px;
 }
 
 .blog-carousel-btn.next {
-  right: 5px;
+  right: -15px;
 }
 
 .blog-carousel-btn:hover {
-  background-color: #a7b8a8;
-  color: #2f3e46;
+  background-color: #2f3e46;
+  color: #f7f9f6;
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -440,12 +440,12 @@ p, a, span, button {
   padding: 6px 14px;
 }
 
-/* Mission Section */
+/* Mission Section (Fixed High Contrast Text) */
 .mission-section {
   display: flex;
   align-items: center;
   background-color: #2F3E46;
-  color: #2f3e46;
+  color: #f7f9f6;
   padding: 60px 20px;
 }
 
@@ -466,30 +466,39 @@ p, a, span, button {
   padding: 20px;
   padding-left: 50px;
   text-align: left;
-  text-decoration: none;
   font-size: 18px;
-  color: #2f3e46;
+  color: #f7f9f6;
 }
 
 .mission-text h1 {
   margin-top: 0;
-  color: #2f3e46;
+  color: #f7f9f6;
+}
+
+.mission-text p {
+  color: #f7f9f6;
+  line-height: 1.6;
 }
 
 .mission-text a {
   text-decoration: none;
-  color: #b85042;
+  color: #a7b8a8;
   font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.mission-text a:hover {
+  color: #b85042;
 }
 
 /* Bottom Wave Mask */
 .box-bottom-wave {
- -webkit-mask: 
-  radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
-  radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
-mask: 
-  radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
-  radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
+  -webkit-mask: 
+    radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
+  mask: 
+    radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
 }
 
 /* Social Icons (Sticky Corner) */
@@ -650,7 +659,7 @@ mask:
   }
 
   .blog-section {
-    padding: 1.5rem 0.5rem;
+    padding: 1.5rem 0.5rem 3.5rem;
   }
 
   .blog-card {
@@ -669,6 +678,15 @@ mask:
 
   .blog-carousel-btn.next {
     right: 0;
+  }
+
+  .mission-section {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .mission-text {
+    padding-left: 20px;
   }
 }
 

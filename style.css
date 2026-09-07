@@ -440,6 +440,31 @@ p, a, span, button {
   padding: 6px 14px;
 }
 
+/* Mission Section */
+.mission-section {
+	display: flex;
+	align-items: center;
+}
+
+.mission-image {
+	flex: 1;
+	padding: 20px;
+}
+
+.mission-text {
+	flex: 1;
+	padding: 20px;
+	padding-left: 50px;
+	text-align: left;
+	text-decoration: none;
+	font-size: 18px;
+}
+	
+.mission-text a {
+	text-decoration: none;
+	color: #F9F9F9;
+}
+	
 /* Social Icons (Sticky Corner) */
 .icon-bar {
   position: fixed;

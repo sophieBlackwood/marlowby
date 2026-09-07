@@ -503,7 +503,7 @@ p, a, span, button {
 
 /* Testimonials Section */
 .testimonial-section {
-  background-color:  #E7E8D1;
+  background-color: #E7E8D1;
   padding: 3rem 1rem;
 }
 
@@ -518,6 +518,13 @@ p, a, span, button {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.testimonial-title {
+  text-align: center;
+  color: #2f3e46;
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
 .testimonial-grid {
@@ -565,7 +572,7 @@ p, a, span, button {
   font-size: 1.125rem;
   font-weight: 300;
   font-style: italic;
-  color: #2f3e46; /* Dark Charcoal text */
+  color: #2f3e46;
   margin-top: 0.5rem;
   margin-bottom: 0;
 }

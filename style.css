@@ -160,6 +160,13 @@ p, a, span, button {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  -webkit-mask: 
+    radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
+  mask: 
+    radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
 }
 
 .video-background {

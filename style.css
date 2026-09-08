@@ -588,14 +588,14 @@ mask:
 
 /* Buy Now section */
 .cta-section {
-  background-color: #E7E8D1;
-  color: #2F3E46;         
+  background-color: #2F3E46;
+  color: #E7E8D1;         
   padding: 100px 20px;   
   text-align: center;
 }
 
 .cta-section h1 {
-  color: #2F3E46;
+  color: #E7E8D1;
   font-size: 48px;
   margin-top: 0;
   margin-bottom: 24px;

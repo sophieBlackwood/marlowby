@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" href="https://use.typekit.net/rig8hkd.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="icon_transparent.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caacupe+One&family=Slabo+13px&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <a href="index.html" class="logo-link">
+      <img id="logoImage" src="Logos/logo_text2_transparent.png" alt="Marlowby logo" height="30">
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="https://game-day-grill-bpa-project.square.site/#items" target="_blank" rel="noopener noreferrer" class="highlight-link">Subscribe</a>
+    </nav>
+
+    <!-- Mobile Hamburger Toggle -->
+    <button class="hamburger-menu" onclick="openNav()" aria-label="Open mobile menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Mobile Side Navigation Drawer -->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Close menu">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="https://game-day-grill-bpa-project.square.site/#items" target="_blank" rel="noopener noreferrer" class="highlight-link">Subscribe</a>
+  </div>
+
+ <!-- Hero Section -->
+<section class="hero-section">
+  <div class="video-background">
+    <iframe 
+      src="https://www.youtube-nocookie.com/embed/QDia3e12czc?autoplay=1&mute=1&controls=0&loop=1&playlist=QDia3e12czc&playsinline=1" 
+      title="Background video"
+      allow="autoplay; encrypted-media" 
+      allowfullscreen>
+    </iframe>
+  </div>
+  
+  <div class="hero-text">
+    <h1>About Us</h1>
+  </div>
+</section>
+  
+  <!-- Footer -->
+  <footer class="site-footer box-bottom-wave">
+    <br><br><br><br><br><br>
+    <div class="footer-container">
+      <div class="footer-contact">
+        <a href="mailto:placeholder@email.com" class="footer-link">placeholder@email.com</a>
+        <span class="divider">·</span>
+        <a href="tel:(208)-111-1111" class="footer-link">(208) 111-1111</a>
+      </div>
+
+      <div class="footer-logo">
+        <a href="index.html">Marlowby</a>
+      </div>
+
+      <div class="footer-copyright">
+        <p>&copy; 2026 Marlowby</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Social Icons Bar -->
+  <div class="icon-bar">
+    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="mailto:blankwebsite@gmail.com" class="email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" title="Go to top" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -77,16 +77,21 @@ document.addEventListener("DOMContentLoaded", () => {
       isTransitioning = true;
       index++;
       updateCarousel(true);
+
+      // Safety fallback if transitionend doesn't trigger
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 450);
     };
 
     const prev = () => {
       if (isTransitioning) return;
-      
+
       if (index === 0) {
         // Instant snap to end clone set, then transition back one step
         index = total;
         updateCarousel(false);
-        
+
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
             isTransitioning = true;
@@ -99,6 +104,11 @@ document.addEventListener("DOMContentLoaded", () => {
         index--;
         updateCarousel(true);
       }
+
+      // Safety fallback if transitionend doesn't trigger
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 450);
     };
 
     blogNext?.addEventListener("click", next);

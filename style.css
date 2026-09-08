@@ -30,6 +30,11 @@ body {
   padding-top: 58px;
 }
 
+/* Helper Utility Classes */
+.text-center {
+  text-align: center;
+}
+
 /* Typography */
 h1 {
   font-family: "Caacupe One", sans-serif;
@@ -168,14 +173,11 @@ p, a, span, button {
 }
 
 .video-background iframe {
-  width: 100vw;
-  height: 56.25vw;
-  min-height: 100vh;
-  min-width: 177.77vh;
+  width: 300%;
+  height: 300%;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: -100%;
+  left: -100%;
   border: none;
 
   -webkit-mask: 
@@ -294,7 +296,7 @@ p, a, span, button {
 
 /* Featured Boxes Carousel Section */
 .blog-section {
-  padding: 2rem 1rem 4rem;
+  padding: 4rem 1rem 6rem; /* Expanded bottom padding to account for wave mask */
   text-align: center;
   background-color: #a7b8a8;
   color: #f7f9f6;
@@ -491,16 +493,16 @@ p, a, span, button {
   color: #b85042;
 }
 
-/* Top Wave Mask */
+/* Mask Classes */
 .box-top-wave {
   -webkit-mask: 
-  radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
-  radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
-mask: 
-  radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
-  radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
+    radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
+  mask: 
+    radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
 }
-/* Bottom Wave Mask */
+
 .box-bottom-wave {
   -webkit-mask: 
     radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
@@ -508,6 +510,16 @@ mask:
   mask: 
     radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
     radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
+}
+
+/* Added combined wave for sections requiring top and bottom clipping */
+.double-wave {
+  -webkit-mask: 
+    radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 50%,
+    radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 100%/432px 50%;
+  mask: 
+    radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 50%,
+    radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 100%/432px 50%;
 }
 
 /* Testimonials Section */
@@ -590,7 +602,7 @@ mask:
 .cta-section {
   background-color: #2F3E46;
   color: #E7E8D1;         
-  padding: 100px 20px;   
+  padding: 120px 20px;   
   text-align: center;
 }
 
@@ -673,7 +685,7 @@ mask:
 .site-footer {
   background-color: #1e282d;
   color: #f7f9f6;
-  padding: 60px 20px;
+  padding: 80px 20px 40px;
 }
 
 .footer-container {
@@ -758,10 +770,6 @@ mask:
     font-size: 18px;
   }
 
-  .blog-section {
-    padding: 1.5rem 0.5rem 3.5rem;
-  }
-
   .blog-card {
     flex: 0 0 210px;
   }
@@ -811,5 +819,9 @@ mask:
 
   .footer-contact .divider {
     display: none;
+  }
+
+  .icon-bar {
+    bottom: 70px;
   }
 }

@@ -1,19 +1,19 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // Mobile Side Navigation Menu
-  const openNavBtn = document.getElementById("openNavBtn");
-  const closeNavBtn = document.getElementById("closeNavBtn");
+// Global navigation functions called by inline HTML onclick handlers
+function openNav() {
   const mySidenav = document.getElementById("mySidenav");
-
-  if (openNavBtn && closeNavBtn && mySidenav) {
-    openNavBtn.addEventListener("click", () => {
-      mySidenav.style.width = "250px";
-    });
-
-    closeNavBtn.addEventListener("click", () => {
-      mySidenav.style.width = "0";
-    });
+  if (mySidenav) {
+    mySidenav.style.width = "250px";
   }
+}
 
+function closeNav() {
+  const mySidenav = document.getElementById("mySidenav");
+  if (mySidenav) {
+    mySidenav.style.width = "0";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
   // Scroll to Top Button
   const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
@@ -43,58 +43,59 @@ document.addEventListener("DOMContentLoaded", () => {
   if (blogTrack && blogCards.length > 0) {
     const trackStyle = getComputedStyle(blogTrack);
     const gap = parseFloat(trackStyle.gap) || 0;
-    const transitionDuration = parseFloat(trackStyle.transitionDuration) * 1000 || 500;
     const total = blogCards.length;
 
-    // Clone cards to allow infinite looping
-    blogCards.forEach(card => blogTrack.appendChild(card.cloneNode(true)));
+    // Clone initial cards to the end to allow continuous sliding forward
+    blogCards.forEach((card) => blogTrack.appendChild(card.cloneNode(true)));
 
     let index = 0;
     let isTransitioning = false;
 
-    const updateCarousel = (animate = true) => {
-      if (isTransitioning && animate) return;
-      isTransitioning = animate;
+    const getCardWidth = () => {
+      return blogCards[0].offsetWidth;
+    };
 
-      const cardWidth = blogCards[0].offsetWidth;
+    const updateCarousel = (animate = true) => {
+      const cardWidth = getCardWidth();
       const offset = index * (cardWidth + gap);
 
-      blogTrack.style.transition = animate ? `transform ${transitionDuration / 1000}s ease` : "none";
+      blogTrack.style.transition = animate ? "transform 0.4s ease-in-out" : "none";
       blogTrack.style.transform = `translateX(${-offset}px)`;
+    };
 
-      if (animate) {
-        setTimeout(() => {
-          isTransitioning = false;
-        }, transitionDuration);
-      } else {
-        isTransitioning = false;
+    // Seamless loop jump handling using transitionend instead of fixed setTimeouts
+    blogTrack.addEventListener("transitionend", () => {
+      isTransitioning = false;
+      if (index >= total) {
+        index = 0;
+        updateCarousel(false);
       }
-    };
-
-    const jumpToStart = () => {
-      index = 0;
-      updateCarousel(false);
-    };
+    });
 
     const next = () => {
       if (isTransitioning) return;
+      isTransitioning = true;
       index++;
       updateCarousel(true);
-      if (index >= total) {
-        setTimeout(jumpToStart, transitionDuration + 10);
-      }
     };
 
     const prev = () => {
       if (isTransitioning) return;
+      
       if (index === 0) {
+        // Instant snap to end clone set, then transition back one step
         index = total;
         updateCarousel(false);
+        
         requestAnimationFrame(() => {
-          index--;
-          updateCarousel(true);
+          requestAnimationFrame(() => {
+            isTransitioning = true;
+            index--;
+            updateCarousel(true);
+          });
         });
       } else {
+        isTransitioning = true;
         index--;
         updateCarousel(true);
       }
@@ -125,8 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
     blogTrack.addEventListener("touchend", (e) => {
       endX = e.changedTouches[0].clientX;
       const diff = startX - endX;
-      
-      if (Math.abs(diff) > 50) {
+
+      if (Math.abs(diff) > 40) {
         if (diff > 0) {
           next();
         } else {

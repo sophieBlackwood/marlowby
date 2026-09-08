@@ -296,7 +296,7 @@ p, a, span, button {
 
 /* Featured Boxes Carousel Section */
 .blog-section {
-  padding: 8rem 1rem 6rem;
+  padding: 9rem 1rem 6rem;
   text-align: center;
   background-color: #a7b8a8;
   color: #f7f9f6;
@@ -310,7 +310,7 @@ p, a, span, button {
 
 .blog-carousel {
   position: relative;
-  max-width: 900px;
+  max-width: 8vw;
   margin: 0 auto;
 }
 

@@ -295,26 +295,26 @@ p, a, span, button {
 }
 
 /* Featured Boxes Carousel Section */
-.carousel-section {
+.blog-section {
   padding: 4rem 1rem 6rem;
   text-align: center;
   background-color: #a7b8a8;
   color: #f7f9f6;
 }
 
-.carousel-section h3 {
+.blog-section h3 {
   font-size: 28px;
   margin-bottom: 15px;
   color: #2f3e46;
 }
 
-.carousel-carousel {
+.blog-carousel {
   position: relative;
   max-width: 900px;
   margin: 0 auto;
 }
 
-.carousel-carousel-track-container {
+.blog-carousel-track-container {
   overflow: hidden;
   width: 100%;
   padding: 1rem 0;
@@ -322,21 +322,21 @@ p, a, span, button {
   touch-action: pan-y;
 }
 
-.carousel-card-grid {
+.blog-card-grid {
   display: flex; 
   gap: 1rem; 
   will-change: transform; 
   transition: transform 0.5s ease;
 }
 
-.carousel-card {
+.blog-card {
   flex: 0 0 240px;
   display: flex;
   justify-content: center;
   align-items: stretch;
 }
 
-.carousel-card-inner {
+.blog-card-inner {
   width: 100%;
   background-color: #1e282d;
   padding: 1rem;
@@ -351,7 +351,7 @@ p, a, span, button {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.carousel-card-inner:hover {
+.blog-card-inner:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
 }
@@ -373,11 +373,11 @@ p, a, span, button {
   transition: transform 0.3s ease;
 }
 
-.carousel-card-inner:hover .box-card-image img {
+.blog-card-inner:hover .box-card-image img {
   transform: scale(1.05);
 }
 
-.carousel-carousel-btn {
+.blog-carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -397,21 +397,21 @@ p, a, span, button {
   transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
 }
 
-.carousel-carousel-btn.prev {
+.blog-carousel-btn.prev {
   left: -15px;
 }
 
-.carousel-carousel-btn.next {
+.blog-carousel-btn.next {
   right: -15px;
 }
 
-.carousel-carousel-btn:hover {
+.blog-carousel-btn:hover {
   background-color: #2f3e46;
   color: #f7f9f6;
   transform: translateY(-50%) scale(1.1);
 }
 
-.carousel-content .date {
+.blog-content .date {
   font-size: 0.75rem;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -420,13 +420,13 @@ p, a, span, button {
   display: block;
 }
 
-.carousel-content h4 {
+.blog-content h4 {
   font-size: 1.1rem;
   margin: 0.3rem 0;
   color: #f7f9f6;
 }
 
-.carousel-content p {
+.blog-content p {
   font-size: 0.85rem;
   line-height: 1.4;
   color: #f7f9f6;
@@ -437,7 +437,7 @@ p, a, span, button {
   margin-bottom: 12px;
 }
 
-.carousel-content .btn {
+.blog-content .btn {
   font-size: 12px;
   padding: 6px 14px;
 }
@@ -808,21 +808,21 @@ p, a, span, button {
     font-size: 18px;
   }
 
-  .carousel-card {
+  .blog-card {
     flex: 0 0 210px;
   }
 
-  .carousel-carousel-btn {
+  .blog-carousel-btn {
     width: 32px;
     height: 32px;
     font-size: 0.9rem;
   }
 
-  .carousel-carousel-btn.prev {
+  .blog-carousel-btn.prev {
     left: 0;
   }
 
-  .carousel-carousel-btn.next {
+  .blog-carousel-btn.next {
     right: 0;
   }
 

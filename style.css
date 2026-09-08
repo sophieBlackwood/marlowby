@@ -159,7 +159,14 @@ p, a, span, button {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible; /* Allows wave vector overlay to render properly */
+  overflow: hidden;
+
+  -webkit-mask: 
+    radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
+  mask: 
+    radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
 }
 
 .video-background {
@@ -213,29 +220,6 @@ p, a, span, button {
   margin: 0 0 25px;
 }
 
-/* SVG Wave Styles */
-.box-bottom-wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.box-bottom-wave svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 80px;
-}
-
-.box-bottom-wave .shape-fill {
-  fill: #2f3e46; /* Matches section background below hero */
-}
-
 /* Reusable Buttons */
 .btn {
   display: inline-block;
@@ -258,8 +242,6 @@ p, a, span, button {
 
 /* Featured Box Section */
 .featured-product {
-  position: relative;
-  z-index: 1;
   padding: 64px 20px;
   background-color: #2f3e46;
 }
@@ -511,7 +493,7 @@ p, a, span, button {
   color: #b85042;
 }
 
-/* CSS Mask Classes (Alternative approach to SVG) */
+/* Mask Classes */
 .box-top-wave {
   -webkit-mask: 
     radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
@@ -519,6 +501,17 @@ p, a, span, button {
   mask: 
     radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
     radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
+}
+
+.box-bottom-wave {
+  -webkit-mask: 
+    radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
+  mask: 
+    radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
+  
+  z-index: 4;
 }
 
 /* Testimonials Section */
@@ -654,6 +647,7 @@ p, a, span, button {
   justify-content: center; 
 }
 
+
 /* Social Icons (Sticky Corner) */
 .icon-bar {
   position: fixed;
@@ -724,10 +718,9 @@ p, a, span, button {
 
 /* Footer Styles */
 .site-footer {
-  position: relative;
   background-color: #1e282d;
   color: #f7f9f6;
-  padding: 100px 20px 40px; /* Top padding pushes text down from waves */
+  padding: 8vw 4vw 7vw;
 }
 
 .footer-container {
@@ -735,16 +728,15 @@ p, a, span, button {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Horizontally centers content */
-  justify-content: center; /* Vertically centers content */
-  gap: 20px; /* Space between elements */
-  text-align: center; /* Centers inline text elements */
+  align-items: center;
+  justify-content: space-between;
+  gap: 4vw;
+  text-align: center;
 }
 
 .footer-contact {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 12px;
   font-size: 16px;
 }
@@ -791,8 +783,8 @@ p, a, span, button {
   }
 
   .footer-container {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    text-align: left;
   }
 }
 

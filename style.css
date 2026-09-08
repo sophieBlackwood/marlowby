@@ -289,7 +289,7 @@ p, a, span, button {
 
 /* Featured Boxes Carousel Section */
 .blog-section {
-  padding: 4rem 1rem 6rem; /* Expanded bottom padding to account for wave mask */
+  padding: 4rem 1rem 6rem;
   text-align: center;
   background-color: #a7b8a8;
   color: #f7f9f6;
@@ -504,14 +504,7 @@ p, a, span, button {
     radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
     radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
   
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
   z-index: 4;
-  pointer-events: none;
 }
 
 

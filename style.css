@@ -720,7 +720,7 @@ p, a, span, button {
 .site-footer {
   background-color: #1e282d;
   color: #f7f9f6;
-  padding: 10vw 4vw 7vw;
+  padding: 8vw 4vw 7vw;
 }
 
 .footer-container {
@@ -730,7 +730,7 @@ p, a, span, button {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 4vw;
   text-align: center;
 }
 

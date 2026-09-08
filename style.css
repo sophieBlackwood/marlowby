@@ -159,7 +159,7 @@ p, a, span, button {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .video-background {

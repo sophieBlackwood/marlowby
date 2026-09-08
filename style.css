@@ -310,7 +310,7 @@ p, a, span, button {
 
 .blog-carousel {
   position: relative;
-  max-width: 8vw;
+  max-width: .5vw;
   margin: 0 auto;
 }
 

@@ -607,17 +607,19 @@ p, a, span, button {
 
 /* About Us Section */
 .team-grid {
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
   margin-top: 2rem;
 }
 
 .team-member {
-  background: var(--card-bg);
-  border-radius: var(--radius);
+  background: #1e282d;
+  border-radius: 8px;
   padding: 2rem;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-  transition: transform var(--transition), box-shadow var(--transition);
-  color: var(--always-light-text);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  color: #f7f9f6;
 }
 
 .team-member:hover {
@@ -628,8 +630,9 @@ p, a, span, button {
 .team-photo {
   width: 90%;
   height: auto;
-  border-radius: var(--radius);
+  border-radius: 8px;
 }
+
 /* Submission Page */
 .submission-page {
   min-height: 100vh;

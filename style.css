@@ -606,6 +606,24 @@ p, a, span, button {
   margin-bottom: 24px;
 }
 
+/* Submission Page */
+.submission-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.submission-page main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.submission-page footer {
+  margin-top: auto;
+}
+
 /* Social Icons (Sticky Corner) */
 .icon-bar {
   position: fixed;

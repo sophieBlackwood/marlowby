@@ -517,7 +517,7 @@ p, a, span, button {
 /* Testimonials Section */
 .testimonial-section {
   background-color: #E7E8D1;
-  padding: 3rem 1rem;
+  padding: 3rem 1rem 6rem;
 }
 
 @media (min-width: 768px) {
@@ -720,7 +720,7 @@ p, a, span, button {
 .site-footer {
   background-color: #1e282d;
   color: #f7f9f6;
-  padding: 8vw 4vw 7vw;
+  padding: 10vw 4vw 7vw;
 }
 
 .footer-container {

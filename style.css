@@ -517,7 +517,7 @@ p, a, span, button {
 /* Testimonials Section */
 .testimonial-section {
   background-color: #E7E8D1;
-  padding: 3rem 1rem 6rem;
+  padding: 3rem 1rem 15rem;
 }
 
 @media (min-width: 768px) {
@@ -594,7 +594,7 @@ p, a, span, button {
 .cta-section {
   background-color: #2F3E46;
   color: #E7E8D1;         
-  padding: 2vw 1vw 2vw;
+  padding: 4vw 1vw 4vw;
   text-align: center;
 }
 
@@ -720,7 +720,7 @@ p, a, span, button {
 .site-footer {
   background-color: #1e282d;
   color: #f7f9f6;
-  padding: 10vw 4vw 7vw;
+  padding: 15vw 4vw 10vw;
 }
 
 .footer-container {

@@ -159,7 +159,14 @@ p, a, span, button {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible;
+  overflow: hidden;
+
+  -webkit-mask: 
+    radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
+  mask: 
+    radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
 }
 
 .video-background {
@@ -213,27 +220,6 @@ p, a, span, button {
   margin: 0 0 25px;
 }
 
-/* SVG Wave Styles */
-.box-bottom-wave {
-  position: relative;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  z-index: 10;
-}
-
-.box-bottom-wave svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 80px;
-}
-
-.box-bottom-wave .shape-fill {
-  fill: #2f3e46;
-}
-
 /* Reusable Buttons */
 .btn {
   display: inline-block;
@@ -256,8 +242,6 @@ p, a, span, button {
 
 /* Featured Box Section */
 .featured-product {
-  position: relative;
-  z-index: 1;
   padding: 64px 20px;
   background-color: #2f3e46;
 }
@@ -372,6 +356,7 @@ p, a, span, button {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
 }
 
+/* Box Image Container */
 .box-card-image {
   width: 100%;
   height: 130px;
@@ -508,7 +493,7 @@ p, a, span, button {
   color: #b85042;
 }
 
-/* CSS Mask Classes */
+/* Mask Classes */
 .box-top-wave {
   -webkit-mask: 
     radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
@@ -516,6 +501,17 @@ p, a, span, button {
   mask: 
     radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
     radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
+}
+
+.box-bottom-wave {
+  -webkit-mask: 
+    radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
+  mask: 
+    radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
+  
+  z-index: 4;
 }
 
 /* Testimonials Section */
@@ -651,6 +647,7 @@ p, a, span, button {
   justify-content: center; 
 }
 
+
 /* Social Icons (Sticky Corner) */
 .icon-bar {
   position: fixed;
@@ -721,32 +718,20 @@ p, a, span, button {
 
 /* Footer Styles */
 .site-footer {
-  position: relative;
   background-color: #1e282d;
   color: #f7f9f6;
-  padding: 100px 20px 40px;
+  padding: 8vw 4vw 7vw;
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 2fr; /* 1/3 left, 2/3 right */
-  gap: 30px;
-  align-items: center;
-}
-
-.footer-left {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.footer-combined-right {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4vw;
+  text-align: center;
 }
 
 .footer-contact {
@@ -782,10 +767,6 @@ p, a, span, button {
   font-size: 14px;
 }
 
-.footer-copyright p {
-  margin: 0;
-}
-
 /* Responsive Layout Breakpoints */
 @media screen and (min-width: 768px) {
   .featured-product .top-section {
@@ -799,6 +780,11 @@ p, a, span, button {
 
   .featured-product .top-section .content {
     width: 50%;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    text-align: left;
   }
 }
 
@@ -844,20 +830,6 @@ p, a, span, button {
 
   .mission-text {
     padding-left: 20px;
-  }
-
-  /* Footer mobile stacking */
-  .footer-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .footer-left {
-    justify-content: center;
-  }
-
-  .footer-combined-right {
-    align-items: center;
   }
 }
 

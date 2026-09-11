@@ -520,13 +520,6 @@ p, a, span, button {
   padding: 3rem 1rem 15rem;
 }
 
-@media (min-width: 768px) {
-  .testimonial-section {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-}
-
 .testimonial-container {
   max-width: 1280px;
   margin-left: auto;
@@ -546,25 +539,12 @@ p, a, span, button {
   gap: 1.5rem;
 }
 
-@media (min-width: 768px) {
-  .testimonial-grid {
-    flex-direction: row;
-    gap: 1.5rem;
-  }
-}
-
 .testimonial-card {
   background-color: #f7f9f6;
   border-radius: 0.5rem;
   padding: 2rem;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-@media (min-width: 768px) {
-  .testimonial-card {
-    width: 33.3333%;
-  }
 }
 
 .star-rating {
@@ -646,7 +626,6 @@ p, a, span, button {
   flex-direction: column;
   justify-content: center; 
 }
-
 
 /* Social Icons (Sticky Corner) */
 .icon-bar {
@@ -765,10 +744,50 @@ p, a, span, button {
 .footer-copyright {
   color: #a7b8a8;
   font-size: 14px;
+  max-width: 550px;
 }
 
-/* Responsive Layout Breakpoints */
+.footer-combined-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  text-align: right;
+}
+
+.copyright-text {
+  font-weight: bold;
+  margin: 0 0 6px 0;
+  color: #f7f9f6;
+}
+
+.disclaimer-text {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+/* ========================================
+   CONSOLIDATED MEDIA QUERIES
+   ======================================== */
+
+/* Min-Width Breakpoints (Tablet & Desktop) */
 @media screen and (min-width: 768px) {
+  .testimonial-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .testimonial-grid {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .testimonial-card {
+    width: 33.3333%;
+  }
+
   .featured-product .top-section {
     flex-direction: row;
     align-items: center;
@@ -788,6 +807,7 @@ p, a, span, button {
   }
 }
 
+/* Max-Width Breakpoints (Tablet & Mobile) */
 @media screen and (max-width: 768px) {
   .desktop-nav {
     display: none;
@@ -831,8 +851,14 @@ p, a, span, button {
   .mission-text {
     padding-left: 20px;
   }
+
+  .footer-combined-right {
+    align-items: center;
+    text-align: center;
+  }
 }
 
+/* Max-Width Breakpoints (Small Mobile) */
 @media screen and (max-width: 480px) {
   .hero-text h1 {
     font-size: 34px;

@@ -14,6 +14,23 @@ function closeNav() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Prevent right-click, dragging, and image-saving shortcuts on all images
+  const protectImages = () => {
+    document.querySelectorAll("img").forEach((img) => {
+      // Prevent context menu (right-click)
+      img.addEventListener("contextmenu", (e) => e.preventDefault());
+      
+      // Prevent dragging images off the page
+      img.addEventListener("dragstart", (e) => e.preventDefault());
+    });
+  };
+
+  protectImages();
+
+  // Re-run image protection if images are added dynamically later
+  const observer = new MutationObserver(() => protectImages());
+  observer.observe(document.body, { childList: true, subtree: true });
+
   // Scroll to Top Button
   const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 

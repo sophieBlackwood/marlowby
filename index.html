@@ -227,30 +227,78 @@
   </div>
 </section>
 
- <!-- Footer --> 
-<footer class="site-footer box-bottom-wave">
+  <!-- Footer -->
+<footer class="site-footer">
   <div class="footer-container">
-    <div class="footer-left">
-      <div class="footer-logo">
-        <a href="index.html">Marlowby</a>
-      </div>
-    </div>
+    <nav class="footer-nav">
+      <!-- Navigation Links -->
+      <ul class="footer-links">
+        <li><a href="/about">About</a></li>
+        <li><a href="mailto:support@yourdomain.com">Contact</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/faq">FAQ</a></li>
+      </ul>
 
-    <div class="footer-combined-right">
-      <div class="footer-contact">
-        <a href="mailto:placeholder@email.com" class="footer-link">placeholder@email.com</a>
-        <span class="divider">·</span>
-        <a href="tel:(208)-111-1111" class="footer-link">(208) 111-1111</a>
+      <!-- Newsletter Subscription Form -->
+      <div class="footer-form-container">
+        <form action="#" method="POST">
+          <label for="footer-email">Subscribe for updates</label>
+          <div class="input-group">
+            <input 
+              type="email" 
+              id="footer-email" 
+              name="email" 
+              placeholder="Your e-mail" 
+              autocomplete="email" 
+              required 
+            />
+            <button type="submit">
+              <span class="sr-only">Send</span>
+              <svg viewBox="0 0 16 13" fill="none" aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.99.786a9.76 9.76 0 005.444 4.973l2.013.741-2.013.741a9.76 9.76 0 00-5.444 4.974l-.903-.43A10.76 10.76 0 0111.57 7H0V6h11.57a10.76 10.76 0 01-4.483-4.786L7.99.786z" fill="currentColor"></path>
+              </svg>
+            </button>
+          </div>
+          <p class="footer-message"></p>
+        </form>
       </div>
 
+      <!-- Social Media Links -->
+      <div class="footer-social">
+        <p>Social Media</p>
+        <ul>
+          <li>
+            <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener">
+              <span class="sr-only">Instagram</span>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.465 1.066C8.638 1.012 9.012 1 12 1c2.988 0 3.362.013 4.534.066 1.172.053 1.972.24 2.672.511.733.277 1.398.71 1.948 1.27.56.549.992 1.213 1.268 1.947.272.7.458 1.5.512 2.67C22.988 8.639 23 9.013 23 12c0 2.988-.013 3.362-.066 4.535-.053 1.17-.24 1.97-.512 2.67a5.396 5.396 0 01-1.268 1.949c-.55.56-1.215.992-1.948 1.268-.7.272-1.5.458-2.67.512-1.174.054-1.548.066-4.536.066-2.988 0-3.362-.013-4.535-.066-1.17-.053-1.97-.24-2.67-.512a5.396 5.396 0 01-1.949-1.268 5.392 5.392 0 01-1.269-1.948c-.271-.7-.457-1.5-.511-2.67C1.012 15.361 1 14.987 1 12c0-2.988.013-3.362.066-4.534.053-1.172.24-1.972.511-2.672a5.396 5.396 0 011.27-1.948 5.392 5.392 0 011.947-1.269c.7-.271 1.501-.457 2.671-.511zm8.98 1.98c-1.16-.053-1.508-.064-4.445-.064-2.937 0-3.285.011-4.445.064-1.073.049-1.655.228-2.043.379-.513.2-.88.437-1.265.822a3.412 3.412 0 00-.822 1.265c-.151.388-.33.97-.379 2.043-.053 1.16-.064 1.508-.064 4.445 0 2.937.011 3.285.064 4.445.049 1.073.228 1.655.379 2.043.176.477.457.91.822 1.265.355.365.788.646 1.265.822.388.151.97.33 2.043.379 1.16.053 1.507.064 4.445.064 2.938 0 3.285-.011 4.445-.064 1.073-.049 1.655-.228 2.043-.379.513-.2.88-.437 1.265-.822.365-.355.646-.788.822-1.265.151-.388.33-.97.379-2.043.053-1.16.064-1.508.064-4.445 0-2.937-.011-3.285-.064-4.445-.049-1.073-.228-1.655-.379-2.043-.2-.513-.437-.88-.822-1.265a3.413 3.413 0 00-1.265-.822c-.388-.151-.97-.33-2.043-.379zm-5.85 12.345a3.67 3.67 0 002.472.125 3.669 3.669 0 001.989-1.474 3.668 3.668 0 00.6-2.4 3.669 3.669 0 00-1.061-2.237 3.67 3.67 0 00-2.954-1.056 3.67 3.67 0 00-1.046 7.042zM8.002 8.002a5.654 5.654 0 017.996 0 5.654 5.654 0 011.226 1.834 5.653 5.653 0 01.43 2.164 5.653 5.653 0 01-.43 2.164 5.653 5.653 0 01-1.226 1.834A5.654 5.654 0 016.346 12a5.654 5.654 0 011.656-3.998zm10.906-.814a1.336 1.336 0 00.306-.434c.072-.164.11-.34.113-.52a1.338 1.338 0 00-.098-.521 1.339 1.339 0 00-.293-.443 1.337 1.337 0 00-1.918.028 1.337 1.337 0 00-.364.937 1.337 1.337 0 00.391.926c.246.246.578.386.926.391a1.337 1.337 0 00.937-.364z" fill="currentColor"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/yourhandle" target="_blank" rel="noopener">
+              <span class="sr-only">X (Twitter)</span>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M23.706 5.19c-.835.37-1.732.62-2.675.733a4.67 4.67 0 002.048-2.578 9.3 9.3 0 01-2.958 1.13 4.66 4.66 0 00-2.644-1.413 4.66 4.66 0 00-2.957.49 4.66 4.66 0 00-2.047 2.19 4.66 4.66 0 00-.29 2.983 13.23 13.23 0 01-9.602-4.868c-.4.69-.63 1.49-.63 2.342a4.66 4.66 0 002.072 3.878 4.647 4.647 0 01-2.11-.583v.06a4.66 4.66 0 001.053 2.95 4.66 4.66 0 002.684 1.617 4.692 4.692 0 01-2.104.08 4.661 4.661 0 001.657 2.315 4.66 4.66 0 002.695.92 9.348 9.348 0 01-5.786 1.995A9.5 9.5 0 011 19.365a13.175 13.175 0 007.14 2.094c8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602a9.47 9.47 0 002.323-2.41l.002-.003z" fill="currentColor"></path>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://youtube.com/yourhandle" target="_blank" rel="noopener">
+              <span class="sr-only">YouTube</span>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M23.5 6.512a2.786 2.786 0 00-.765-1.27 3.05 3.05 0 00-1.338-.742c-1.878-.495-9.402-.495-9.402-.495a76.622 76.622 0 00-9.39.47 3.16 3.16 0 00-1.338.76c-.37.356-.638.795-.778 1.276A29.09 29.09 0 000 12.005c-.012 1.841.15 3.68.488 5.494.137.479.404.916.775 1.269.37.353.833.608 1.34.743 1.904.494 9.39.494 9.39.494a76.821 76.821 0 009.403-.47 3.05 3.05 0 001.338-.742 2.78 2.78 0 00.765-1.27 28.378 28.378 0 00.5-5.495 26.575 26.575 0 00-.5-5.517v.001zM9.604 15.429V8.582l6.26 3.424-6.26 3.423z" fill="currentColor"></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Copyright Information -->
       <div class="footer-copyright">
-        <p class="copyright-text">&copy; 2026 Marlowby</p>
-        <p class="disclaimer-text">
-          This website exists for the purpose of a Business Professionals of America competitive event. 
-          It is not to be used for subscription service use and was made by a group of secondary students for competitive purposes.
-        </p>
+        <small>&copy; Your Brand Name 2026</small>
       </div>
-    </div>
+    </nav>
   </div>
 </footer>
 

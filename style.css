@@ -780,10 +780,7 @@ p, a, span, button {
   max-width: 450px;
 }
 
-/* ========================================
-   SCOPED SHOP SEARCH BAR COMPONENT
-   (Fixed global tag collisions)
-======================================== */
+/* SEARCH BAR COMPONENT */
 .fx {
   display: flex;
 }
@@ -808,7 +805,6 @@ p, a, span, button {
   padding: 35px;
   background-color: var(--color-terracotta);
   border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(184, 80, 66, 0.4), 0 0 0 20px rgba(247, 249, 246, 0.1);
   transform: scale(0.6);
 }
 
@@ -887,11 +883,11 @@ p, a, span, button {
 
 #search-icon:hover #search-icon-circle {
   top: -1px;
-  width: 67px;
-  height: 15px;
+  width: 75px;
+  height: 20px;
   border-width: 0;
   background-color: var(--color-offwhite);
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 #search-icon:hover span {

@@ -10,12 +10,12 @@
 ======================================== */
 
 :root {
-  --color-terracotta: #b85042;
+  --color-terracotta: #d93600;
   --color-cream: #e7e8d1;
-  --color-sage: #a7b8a8;
-  --color-charcoal: #2f3e46;
-  --color-offwhite: #f7f9f6;
-  --color-dark-container: #1e282d;
+  --color-sage: #403adf;
+  --color-charcoal: #250300;
+  --color-offwhite: #738SF0;
+  --color-dark-container: #861e00;
   
   --font-heading-primary: "Caacupe One", sans-serif;
   --font-heading-secondary: "Slabo 13px", serif;

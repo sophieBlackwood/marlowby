@@ -60,8 +60,10 @@ p, a, span, button {
 .container {
   max-width: 1100px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
+/* Header & Navigation */
 .navbar {
   display: flex;
   align-items: center;
@@ -101,21 +103,6 @@ p, a, span, button {
 .navbar img {
   height: 30px;
   display: block;
-}
-
-.highlight-link {
-  color: var(--text-main);
-  text-align: center;
-  padding: 8px 16px;
-  text-decoration: none;
-  font-size: 18px;
-  background-color: var(--accent-primary);
-  border-radius: 4px;
-}
-
-.highlight-link:hover {
-  background-color: var(--accent-secondary);
-  color: var(--text-dark);
 }
 
 .hamburger-menu {
@@ -163,6 +150,71 @@ p, a, span, button {
   font-size: 32px;
 }
 
+/* Button & SVG Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 28px;
+  color: var(--text-main);
+  background-color: var(--accent-primary);
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--accent-secondary);
+  color: var(--text-dark);
+}
+
+/* Custom SVG Animated Button (btn-1) */
+.btn-1 {
+  position: relative;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 12px 30px;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  overflow: hidden;
+}
+
+.btn-1 svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.btn-1 rect {
+  stroke: var(--accent-secondary);
+  stroke-width: 4;
+  stroke-dasharray: 400, 0;
+  transition: all 0.35s linear;
+}
+
+.btn-1:hover {
+  background-color: transparent;
+  color: var(--accent-secondary);
+}
+
+.btn-1:hover rect {
+  stroke-dasharray: 50, 200;
+  stroke-dashoffset: 240;
+  stroke: var(--accent-primary);
+}
+
+/* Hero Section */
 .hero-section {
   position: relative;
   min-height: calc(100vh - 68px);
@@ -224,25 +276,7 @@ p, a, span, button {
   margin: 0 0 25px;
 }
 
-.btn {
-  display: inline-block;
-  border: none;
-  border-radius: 50px;
-  padding: 12px 28px;
-  color: var(--text-main);
-  background-color: var(--accent-primary);
-  text-align: center;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 18px;
-  transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
-}
-
-.btn:hover {
-  background-color: var(--accent-secondary);
-  color: var(--text-dark);
-}
-
+/* Featured Product Section */
 .featured-product {
   padding: 64px 20px;
   background-color: var(--bg-primary);
@@ -291,6 +325,7 @@ p, a, span, button {
   line-height: 1.6;
 }
 
+/* Carousel & Blog Section */
 .blog-section {
   padding: 8rem 0.5rem 6rem;
   text-align: center;
@@ -432,11 +467,7 @@ p, a, span, button {
   margin-bottom: 12px;
 }
 
-.blog-content .btn {
-  font-size: 12px;
-  padding: 6px 14px;
-}
-
+/* Mission Section */
 .mission-section {
   display: flex;
   align-items: center;
@@ -476,17 +507,7 @@ p, a, span, button {
   line-height: 1.6;
 }
 
-.mission-text a {
-  text-decoration: none;
-  color: var(--accent-secondary);
-  font-weight: bold;
-  transition: color 0.2s ease;
-}
-
-.mission-text a:hover {
-  color: var(--accent-primary);
-}
-
+/* Wave Masks */
 .box-top-wave,
 .hero-section {
   -webkit-mask:
@@ -507,6 +528,7 @@ p, a, span, button {
   z-index: 4;
 }
 
+/* Testimonials Section */
 .testimonial-section {
   background-color: var(--bg-secondary);
   padding: 3rem 1rem 15rem;
@@ -562,6 +584,7 @@ p, a, span, button {
   margin-bottom: 0;
 }
 
+/* CTA Section */
 .cta-section {
   background-color: var(--bg-primary);
   color: var(--text-muted);
@@ -576,46 +599,7 @@ p, a, span, button {
   margin-bottom: 24px;
 }
 
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.team-member {
-  background: var(--bg-container-dark);
-  border-radius: 8px;
-  padding: 2rem;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  color: var(--text-main);
-}
-
-.team-member:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-}
-
-.team-photo {
-  width: 90%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.submission-page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.submission-page main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
+/* Icon Bar & Top Scroll */
 .icon-bar {
   position: fixed;
   bottom: 15px;
@@ -644,17 +628,9 @@ p, a, span, button {
   opacity: 0.85;
 }
 
-.facebook {
-  background: #3b5998;
-}
-
-.instagram {
-  background: linear-gradient(45deg, #e4405f, #405de6);
-}
-
-.email {
-  background-color: var(--accent-primary);
-}
+.facebook { background: #3b5998; }
+.instagram { background: linear-gradient(45deg, #e4405f, #405de6); }
+.email { background-color: var(--accent-primary); }
 
 #scrollToTopBtn {
   position: fixed;
@@ -682,6 +658,7 @@ p, a, span, button {
   transform: translateY(-2px);
 }
 
+/* Footer Section */
 .site-footer {
   background-color: var(--bg-container-dark);
   color: var(--text-main);
@@ -745,30 +722,14 @@ p, a, span, button {
   opacity: 0.5;
 }
 
-.footer-copyright p,
-.copyright-text {
+.footer-copyright p {
   font-weight: 700;
   margin: 0;
   color: var(--text-main);
   font-size: 14px;
 }
 
-.disclaimer-text {
-  margin: 0;
-  font-size: 12px;
-  line-height: 1.5;
-  color: var(--text-muted);
-  max-width: 450px;
-}
-
-.fx {
-  display: flex;
-}
-
-.fx-gap {
-  gap: 18px;
-}
-
+/* Search Bar Component */
 .marlowby-search-wrapper {
   position: relative;
   width: 100%;
@@ -776,6 +737,7 @@ p, a, span, button {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .marlowby-search {
@@ -820,81 +782,7 @@ p, a, span, button {
   cursor: pointer;
 }
 
-#search-icon-circle {
-  position: relative;
-  top: -8px;
-  left: 0;
-  width: 43px;
-  height: 43px;
-  margin-top: 0;
-  border-width: 15px;
-  border: 15px solid var(--text-main);
-  background-color: transparent;
-  border-radius: 50%;
-  transition: 0.5s ease all;
-}
-
-.marlowby-search button span {
-  position: absolute;
-  top: 68px;
-  left: 43px;
-  display: block;
-  width: 45px;
-  height: 15px;
-  background-color: transparent;
-  border-radius: 10px;
-  transform: rotateZ(52deg);
-  transition: 0.5s ease all;
-}
-
-.marlowby-search button span:before,
-.marlowby-search button span:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 45px;
-  height: 15px;
-  background-color: var(--text-main);
-  border-radius: 10px;
-  transform: rotateZ(0);
-  transition: 0.5s ease all;
-}
-
-#search-icon:hover #search-icon-circle {
-  top: -1px;
-  width: 75px;
-  height: 20px;
-  border-width: 0;
-  background-color: var(--text-main);
-  border-radius: 10px;
-}
-
-#search-icon:hover span {
-  top: 50%;
-  left: 56px;
-  width: 25px;
-  margin-top: -9px;
-  transform: rotateZ(0);
-}
-
-#search-icon:hover button span:before {
-  bottom: 11px;
-  transform: rotateZ(52deg);
-}
-
-#search-icon:hover button span:after {
-  bottom: -11px;
-  transform: rotateZ(-52deg);
-}
-
-#search-icon:hover button span:before,
-#search-icon:hover button span:after {
-  right: -6px;
-  width: 40px;
-  background-color: var(--text-main);
-}
-
+/* Responsive Media Queries */
 @media screen and (min-width: 768px) {
   .testimonial-section {
     padding-top: 6rem;
@@ -952,14 +840,12 @@ p, a, span, button {
     font-size: 18px;
   }
 
-  .blog-card {
-    flex: 0 0 210px;
+  .blog-carousel {
+    max-width: 95%;
   }
 
-  .blog-carousel-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 0.9rem;
+  .blog-card {
+    flex: 0 0 210px;
   }
 
   .blog-carousel-btn.prev {
@@ -976,7 +862,7 @@ p, a, span, button {
   }
 
   .mission-text {
-    padding-left: 20px;
+    padding-left: 0;
   }
 
   .footer-combined-right {
@@ -992,6 +878,13 @@ p, a, span, button {
 
   .hero-paragraph {
     font-size: 16px;
+  }
+
+  .cta-star {
+    top: -10px;
+    left: 0;
+    font-size: 12px;
+    padding: 6px 10px;
   }
 
   .btn {
@@ -1010,5 +903,9 @@ p, a, span, button {
 
   .icon-bar {
     bottom: 70px;
+  }
+
+  .marlowby-search {
+    transform: scale(0.45);
   }
 }

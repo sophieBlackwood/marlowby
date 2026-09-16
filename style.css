@@ -294,7 +294,6 @@ p, a, span, button {
 .blog-section {
   padding: 8rem 0.5rem 6rem;
   text-align: center;
-  background-color: var(--accent-secondary);
   color: var(--text-main);
 }
 

@@ -530,7 +530,7 @@ p, a, span, button {
 
 /* Testimonials Section */
 .testimonial-section {
-  background-color: var(--bg-secondary);
+  background-color: var(--accent-secondary);
   padding: 3rem 1rem 15rem;
 }
 

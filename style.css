@@ -152,9 +152,7 @@ p, a, span, button {
 
 /* Button & SVG Button Styles */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
   border: none;
   border-radius: 50px;
   padding: 12px 28px;
@@ -164,54 +162,12 @@ p, a, span, button {
   cursor: pointer;
   text-decoration: none;
   font-size: 18px;
-  font-weight: 700;
   transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
 }
 
 .btn:hover {
   background-color: var(--accent-secondary);
   color: var(--text-dark);
-}
-
-/* Custom SVG Animated Button (btn-1) */
-.btn-1 {
-  position: relative;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 12px 30px;
-  color: var(--text-main);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
-  overflow: hidden;
-}
-
-.btn-1 svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.btn-1 rect {
-  stroke: var(--accent-secondary);
-  stroke-width: 4;
-  stroke-dasharray: 400, 0;
-  transition: all 0.35s linear;
-}
-
-.btn-1:hover {
-  background-color: transparent;
-  color: var(--accent-secondary);
-}
-
-.btn-1:hover rect {
-  stroke-dasharray: 50, 200;
-  stroke-dashoffset: 240;
-  stroke: var(--accent-primary);
 }
 
 /* Hero Section */

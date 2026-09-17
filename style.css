@@ -86,18 +86,43 @@ p, a, span, button {
 }
 
 .navbar a {
+  position: relative;
   color: var(--text-main);
   text-align: center;
   padding: 8px 16px;
   text-decoration: none;
   font-size: 18px;
   border-radius: 4px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.navbar a::after {
+  content: '.';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  width: 0%;
+  height: 1px;
+  color: transparent;
+  background: var(--accent-secondary);
+  text-align: left;
+  opacity: 0;
+  z-index: -1;
+  border-radius: 4px;
 }
 
 .navbar a:hover {
-  background-color: var(--accent-secondary);
   color: var(--text-dark);
+}
+
+.navbar a:hover::after {
+  opacity: 1;
+  animation: fill 0.4s forwards;
+  -webkit-animation: fill 0.4s forwards;
+  -moz-animation: fill 0.4s forwards;
 }
 
 .navbar img {
@@ -736,6 +761,39 @@ p, a, span, button {
   width: 84px;
   height: 96px;
   cursor: pointer;
+}
+
+/* Keyframe Animations */
+@-webkit-keyframes fill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    background: var(--accent-secondary);
+  }
+}
+
+@keyframes fill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    background: var(--accent-secondary);
+  }
 }
 
 /* Responsive Media Queries */

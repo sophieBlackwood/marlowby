@@ -1,20 +1,20 @@
 :root {
   /* Backgrounds */
-  --bg-primary: #1F0B0E;        /* Deep Mailbox Wine / Burgundy-Black */
-  --bg-secondary: #F8F5EE;      /* Envelope Cream (Crisp, warm off-white) */
-  --bg-container-dark: #3B1419; /* Dark Mahogany Crimson (Card background) */
+  --bg-primary: #1A0B0C;
+  --bg-secondary: #F7F3EC;
+  --bg-container-dark: #321618;
 
   /* Accents */
-  --accent-primary: #D32F2F;    /* Classic Post / Stamp Bright Red */
-  --accent-secondary: #E3A857;  /* Warm Brass / Mail Seal Gold */
+  --accent-primary: #C84628;
+  --accent-secondary: #486382;
 
   /* Typography */
-  --text-main: #F8F5EE;         /* Light cream text for dark backdrops */
-  --text-dark: #1F0B0E;         /* Deep burgundy text for light backdrops */
-  --text-muted: #D1C7B7;        /* Stamp Paper Parchment (Muted text) */
-  
-  --border-subtle: rgba(227, 168, 87, 0.2);
-  --overlay-dark: rgba(31, 11, 14, 0.65);
+  --text-main: #F7F3EC;
+  --text-dark: #1A0B0C;
+  --text-muted: #D1C7BB;
+
+  --border-subtle: rgba(115, 143, 0, 0.15);
+  --overlay-dark: rgba(37, 3, 0, 0.65);
 
   --font-heading-primary: "Caacupe One", sans-serif;
   --font-heading-secondary: "Slabo 13px", serif;
@@ -57,6 +57,7 @@ p, a, span, button {
   text-align: center;
 }
 
+/* Layout Container */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -64,69 +65,20 @@ p, a, span, button {
 }
 
 /* Header & Navigation */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--bg-primary);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 68px;
-  padding: 0 20px;
-  z-index: 99;
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.desktop-nav {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.navbar a {
-  position: relative;
+/* Header & Navigation */ .navbar { display: flex; align-items: center; justify-content: space-between; background-color: var(--bg-primary); position: fixed; top: 0; left: 0; width: 100%; height: 68px; padding: 0 20px; z-index: 99; border-bottom: 1px solid var(--border-subtle); } .desktop-nav { display: flex; align-items: center; gap: 15px; } .navbar a { position: relative; color: var(--text-main); text-align: center; padding: 8px 16px; text-decoration: none; font-size: 18px; border-radius: 4px; overflow: hidden; /* Prevent fill effect overflow */ transition: color 0.3s ease; z-index: 1; } .navbar a::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; margin: 0; width: 0%; height: 100%; background: var(--accent-secondary); opacity: 0; z-index: -1; border-radius: 4px; } .navbar a:hover { color: var(--text-dark); } .navbar a:hover::after { opacity: 1; animation: fill 0.4s forwards; -webkit-animation: fill 0.4s forwards; -moz-animation: fill 0.4s forwards; } .navbar img { height: 30px; display: block; }
+.highlight-link {
   color: var(--text-main);
   text-align: center;
   padding: 8px 16px;
   text-decoration: none;
   font-size: 18px;
-  border-radius: 4px;
-  overflow: hidden; /* Prevent fill effect overflow */
-  transition: color 0.3s ease;
-  z-index: 1;
-}
-
-.navbar a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0;
-  width: 0%;
-  height: 100%;
-  background: var(--accent-secondary);
-  opacity: 0;
-  z-index: -1;
+  background-color: var(--accent-primary);
   border-radius: 4px;
 }
 
-.navbar a:hover {
-  color: var(--text-dark);
-}
-
-.navbar a:hover::after {
-  opacity: 1;
-  animation: fill 0.4s forwards;
-  -webkit-animation: fill 0.4s forwards;
-  -moz-animation: fill 0.4s forwards;
-}
-
-.navbar img {
-  height: 30px;
-  display: block;
+.highlight-link:hover {
+  background-color: var(--accent-secondary);
+  color: var(--text-main);
 }
 
 .hamburger-menu {
@@ -153,6 +105,10 @@ p, a, span, button {
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
 }
 
+.sidenav.open {
+  width: 250px;
+}
+
 .sidenav a {
   padding: 12px 24px;
   text-decoration: none;
@@ -164,7 +120,7 @@ p, a, span, button {
 
 .sidenav a:hover {
   background-color: var(--accent-secondary);
-  color: var(--text-dark);
+  color: var(--text-main);
 }
 
 .sidenav .closebtn {
@@ -172,34 +128,6 @@ p, a, span, button {
   top: 10px;
   right: 20px;
   font-size: 32px;
-}
-
-/* Button & SVG Button Styles */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  border-radius: 50px;
-  padding: 12px 28px;
-  color: var(--text-main);
-  background-color: var(--accent-primary);
-  text-align: center;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 1;
-  user-select: none;
-  transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
-}
-
-.btn:hover {
-  background-color: var(--accent-secondary);
-  color: var(--text-dark);
-}
-
-.btn:active {
-  transform: scale(0.97);
 }
 
 /* Hero Section */
@@ -264,6 +192,33 @@ p, a, span, button {
   margin: 0 0 25px;
 }
 
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 28px;
+  color: var(--text-main);
+  background-color: var(--accent-primary);
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 1;
+  transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--accent-secondary);
+  color: var(--text-main);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
 /* Featured Product Section */
 .featured-product {
   padding: 64px 20px;
@@ -313,18 +268,17 @@ p, a, span, button {
   line-height: 1.6;
 }
 
-/* Carousel & Blog Section */
+/* Blog & Carousel Section */
 .blog-section {
   padding: 8rem 0.5rem 6rem;
   text-align: center;
-  background-color: var(--accent-secondary);
   color: var(--text-main);
 }
 
 .blog-section h3 {
   font-size: 28px;
   margin-bottom: 15px;
-  color: var(--text-main);
+  color: var(--text-dark);
 }
 
 .blog-carousel {
@@ -424,8 +378,8 @@ p, a, span, button {
 }
 
 .blog-carousel-btn:hover {
-  background-color: var(--accent-secondary);
-  color: var(--text-dark);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
   transform: translateY(-50%) scale(1.1);
 }
 
@@ -453,6 +407,11 @@ p, a, span, button {
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: 12px;
+}
+
+.blog-content .btn {
+  font-size: 12px;
+  padding: 6px 14px;
 }
 
 /* Mission Section */
@@ -495,6 +454,17 @@ p, a, span, button {
   line-height: 1.6;
 }
 
+.mission-text a {
+  text-decoration: none;
+  color: var(--accent-secondary);
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.mission-text a:hover {
+  color: var(--accent-primary);
+}
+
 /* Wave Masks */
 .box-top-wave,
 .hero-section {
@@ -516,9 +486,9 @@ p, a, span, button {
   z-index: 4;
 }
 
-/* Testimonials Section */
+/* Testimonial Section */
 .testimonial-section {
-  background-color: var(--accent-secondary);
+  background-color: var(--bg-secondary);
   padding: 3rem 1rem 15rem;
 }
 
@@ -572,7 +542,7 @@ p, a, span, button {
   margin-bottom: 0;
 }
 
-/* CTA Section */
+/* Call to Action Section */
 .cta-section {
   background-color: var(--bg-primary);
   color: var(--text-muted);
@@ -587,7 +557,47 @@ p, a, span, button {
   margin-bottom: 24px;
 }
 
-/* Icon Bar & Top Scroll */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-member {
+  background: var(--bg-container-dark);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  color: var(--text-main);
+}
+
+.team-member:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.team-photo {
+  width: 90%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.submission-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.submission-page main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Floating Widgets & Actions */
 .icon-bar {
   position: fixed;
   bottom: 15px;
@@ -616,9 +626,17 @@ p, a, span, button {
   opacity: 0.85;
 }
 
-.facebook { background: #3b5998; }
-.instagram { background: linear-gradient(45deg, #e4405f, #405de6); }
-.email { background-color: var(--accent-primary); }
+.facebook {
+  background: #3b5998;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #e4405f, #405de6);
+}
+
+.email {
+  background-color: var(--accent-primary);
+}
 
 #scrollToTopBtn {
   position: fixed;
@@ -710,14 +728,32 @@ p, a, span, button {
   opacity: 0.5;
 }
 
-.footer-copyright p {
+.footer-copyright p,
+.copyright-text {
   font-weight: 700;
   margin: 0;
   color: var(--text-main);
   font-size: 14px;
 }
 
-/* Search Bar Component */
+.disclaimer-text {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--accent-secondary);
+  max-width: 450px;
+}
+
+/* Utilities */
+.fx {
+  display: flex;
+}
+
+.fx-gap {
+  gap: 18px;
+}
+
+/* Search Input Component */
 .marlowby-search-wrapper {
   position: relative;
   width: 100%;
@@ -725,7 +761,6 @@ p, a, span, button {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
 .marlowby-search {
@@ -758,7 +793,7 @@ p, a, span, button {
 }
 
 .marlowby-search input[type="text"]::placeholder {
-  color: var(--text-muted);
+  color: var(--accent-secondary);
   opacity: 0.8;
 }
 
@@ -770,40 +805,82 @@ p, a, span, button {
   cursor: pointer;
 }
 
-/* Keyframe Animations */
-@-webkit-keyframes fill {
-  0% {
-    width: 0%;
-    height: 1px;
-  }
-  50% {
-    width: 100%;
-    height: 1px;
-  }
-  100% {
-    width: 100%;
-    height: 100%;
-    background: var(--accent-secondary);
-  }
+#search-icon-circle {
+  position: relative;
+  top: -8px;
+  left: 0;
+  width: 43px;
+  height: 43px;
+  margin-top: 0;
+  border-width: 15px;
+  border: 15px solid var(--text-main);
+  background-color: transparent;
+  border-radius: 50%;
+  transition: 0.5s ease all;
 }
 
-@keyframes fill {
-  0% {
-    width: 0%;
-    height: 1px;
-  }
-  50% {
-    width: 100%;
-    height: 1px;
-  }
-  100% {
-    width: 100%;
-    height: 100%;
-    background: var(--accent-secondary);
-  }
+.marlowby-search button span {
+  position: absolute;
+  top: 68px;
+  left: 43px;
+  display: block;
+  width: 45px;
+  height: 15px;
+  background-color: transparent;
+  border-radius: 10px;
+  transform: rotateZ(52deg);
+  transition: 0.5s ease all;
 }
 
-/* Responsive Media Queries */
+.marlowby-search button span:before,
+.marlowby-search button span:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 45px;
+  height: 15px;
+  background-color: var(--text-main);
+  border-radius: 10px;
+  transform: rotateZ(0);
+  transition: 0.5s ease all;
+}
+
+.marlowby-search:hover #search-icon-circle {
+  top: -1px;
+  width: 75px;
+  height: 20px;
+  border-width: 0;
+  background-color: var(--text-main);
+  border-radius: 10px;
+}
+
+.marlowby-search:hover button span {
+  top: 50%;
+  left: 56px;
+  width: 25px;
+  margin-top: -9px;
+  transform: rotateZ(0);
+}
+
+.marlowby-search:hover button span:before {
+  bottom: 11px;
+  transform: rotateZ(52deg);
+}
+
+.marlowby-search:hover button span:after {
+  bottom: -11px;
+  transform: rotateZ(-52deg);
+}
+
+.marlowby-search:hover button span:before,
+.marlowby-search:hover button span:after {
+  right: -6px;
+  width: 40px;
+  background-color: var(--text-main);
+}
+
+/* Media Queries */
 @media screen and (min-width: 768px) {
   .testimonial-section {
     padding-top: 6rem;
@@ -861,12 +938,14 @@ p, a, span, button {
     font-size: 18px;
   }
 
-  .blog-carousel {
-    max-width: 95%;
-  }
-
   .blog-card {
     flex: 0 0 210px;
+  }
+
+  .blog-carousel-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
   }
 
   .blog-carousel-btn.prev {
@@ -901,13 +980,6 @@ p, a, span, button {
     font-size: 16px;
   }
 
-  .cta-star {
-    top: -10px;
-    left: 0;
-    font-size: 12px;
-    padding: 6px 10px;
-  }
-
   .btn {
     padding: 10px 20px;
     font-size: 16px;
@@ -924,9 +996,5 @@ p, a, span, button {
 
   .icon-bar {
     bottom: 70px;
-  }
-
-  .marlowby-search {
-    transform: scale(0.45);
   }
 }

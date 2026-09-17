@@ -659,7 +659,7 @@ p, a, span, button {
   color: var(--text-main);
   padding: 10rem 1.5rem 2.5rem;
   border-top: 1px solid var(--border-subtle);
-  position: relative;
+  position: fixed;
 }
 
 .footer-container {

@@ -93,22 +93,21 @@ p, a, span, button {
   text-decoration: none;
   font-size: 18px;
   border-radius: 4px;
-  transition: all 0.5s ease;
+  overflow: hidden; /* Prevent fill effect overflow */
+  transition: color 0.3s ease;
   z-index: 1;
 }
 
 .navbar a::after {
-  content: '.';
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   margin: 0;
   width: 0%;
-  height: 1px;
-  color: transparent;
+  height: 100%;
   background: var(--accent-secondary);
-  text-align: left;
   opacity: 0;
   z-index: -1;
   border-radius: 4px;
@@ -177,7 +176,9 @@ p, a, span, button {
 
 /* Button & SVG Button Styles */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   border-radius: 50px;
   padding: 12px 28px;
@@ -187,12 +188,18 @@ p, a, span, button {
   cursor: pointer;
   text-decoration: none;
   font-size: 18px;
+  line-height: 1;
+  user-select: none;
   transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
 }
 
 .btn:hover {
   background-color: var(--accent-secondary);
   color: var(--text-dark);
+}
+
+.btn:active {
+  transform: scale(0.97);
 }
 
 /* Hero Section */
@@ -624,7 +631,7 @@ p, a, span, button {
   cursor: pointer;
   font-size: 18px;
   z-index: 1000;
-  display: none;
+  display: flex;
   width: 44px;
   height: 44px;
   align-items: center;

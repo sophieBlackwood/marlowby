@@ -175,7 +175,8 @@ p, a, span, button {
 }
 
 /* Base Button Reset & Styles */
-.btn {
+.btn,
+a.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -189,18 +190,21 @@ p, a, span, button {
   text-align: center;
   cursor: pointer;
   text-decoration: none;
+  font-family: var(--font-body);
   font-size: 16px;
   line-height: 1;
   user-select: none;
   transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
 }
 
-.btn:hover {
+.btn:hover,
+a.btn:hover {
   background-color: var(--accent-secondary);
   color: var(--text-dark);
 }
 
-.btn:active {
+.btn:active,
+a.btn:active {
   transform: scale(0.97);
 }
 
@@ -659,7 +663,7 @@ p, a, span, button {
   color: var(--text-main);
   padding: 10rem 1.5rem 2.5rem;
   border-top: 1px solid var(--border-subtle);
-  position: fixed;
+  position: relative; /* Fixed from 'position: fixed' to prevent footer overlay issues */
 }
 
 .footer-container {
@@ -913,7 +917,8 @@ p, a, span, button {
     padding: 6px 10px;
   }
 
-  .btn {
+  .btn,
+  a.btn {
     padding: 10px 20px;
     font-size: 15px;
   }

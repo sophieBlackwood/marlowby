@@ -14,34 +14,51 @@ function closeNav() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Prevent right-click, dragging, and image-saving shortcuts on all images
+  // Prevent right-click and dragging on images
+  const protectImage = (img) => {
+    if (img.dataset.protected) return;
+    img.addEventListener("contextmenu", (e) => e.preventDefault());
+    img.addEventListener("dragstart", (e) => e.preventDefault());
+    img.dataset.protected = "true";
+  };
+
   const protectImages = () => {
-    document.querySelectorAll("img").forEach((img) => {
-      // Prevent context menu (right-click)
-      img.addEventListener("contextmenu", (e) => e.preventDefault());
-      
-      // Prevent dragging images off the page
-      img.addEventListener("dragstart", (e) => e.preventDefault());
-    });
+    document.querySelectorAll("img").forEach(protectImage);
   };
 
   protectImages();
 
-  // Re-run image protection if images are added dynamically later
-  const observer = new MutationObserver(() => protectImages());
+  // Re-run image protection efficiently if images are added dynamically later
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      mutation.addedNodes.forEach((node) => {
+        if (node.nodeType === 1) { // Element node
+          if (node.tagName === "IMG") {
+            protectImage(node);
+          } else {
+            node.querySelectorAll("img").forEach(protectImage);
+          }
+        }
+      });
+    });
+  });
+
   observer.observe(document.body, { childList: true, subtree: true });
 
   // Scroll to Top Button
   const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
   if (scrollToTopBtn) {
-    window.addEventListener("scroll", () => {
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+      if (scrollPosition > 300) {
         scrollToTopBtn.style.display = "flex";
       } else {
         scrollToTopBtn.style.display = "none";
       }
-    });
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     scrollToTopBtn.addEventListener("click", () => {
       window.scrollTo({
@@ -68,9 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let index = 0;
     let isTransitioning = false;
 
-    const getCardWidth = () => {
-      return blogCards[0].offsetWidth;
-    };
+    const getCardWidth = () => blogCards[0].offsetWidth;
 
     const updateCarousel = (animate = true) => {
       const cardWidth = getCardWidth();
@@ -80,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
       blogTrack.style.transform = `translateX(${-offset}px)`;
     };
 
-    // Seamless loop jump handling using transitionend instead of fixed setTimeouts
+    // Seamless loop jump handling using transitionend
     blogTrack.addEventListener("transitionend", () => {
       isTransitioning = false;
       if (index >= total) {
@@ -98,12 +113,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const prev = () => {
       if (isTransitioning) return;
-      
+
       if (index === 0) {
         // Instant snap to end clone set, then transition back one step
         index = total;
         updateCarousel(false);
-        
+
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
             isTransitioning = true;
@@ -118,8 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    blogNext?.addEventListener("click", next);
-    blogPrev?.addEventListener("click", prev);
+    if (blogNext) blogNext.addEventListener("click", next);
+    if (blogPrev) blogPrev.addEventListener("click", prev);
 
     updateCarousel(false);
 

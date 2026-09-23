@@ -320,7 +320,6 @@ a.btn:active {
   gap: 15px;
   padding: 15px 20px;
   background-color: var(--bg-container-dark);
-  border: 1px solid var(--border-subtle);
   border-radius: 12px;
   margin-bottom: 30px;
 }
@@ -362,9 +361,8 @@ a.btn:active {
 
 .product-item {
   background-color: var(--bg-container-dark);
-  border: 1px solid var(--border-subtle);
   border-radius: 12px;
-  padding: 16px;
+  padding: 1vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -375,7 +373,6 @@ a.btn:active {
 .product-item:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
-  border-color: var(--accent-secondary);
 }
 
 .image-holder {

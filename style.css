@@ -52,10 +52,13 @@ h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-.container {
+/* Base Container & Bootstrap Compatibility */
+.container,
+.container-lg {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 20px;
+  width: 100%;
 }
 
 /* --- Header & Navigation --- */
@@ -233,7 +236,7 @@ a.btn:active {
 .marlowby-search-wrapper {
   position: relative;
   width: 100%;
-  padding: 40px 20px 20px; /* Increased vertical breathing room */
+  padding: 40px 20px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -241,11 +244,11 @@ a.btn:active {
 
 .marlowby-search {
   width: 100%;
-  max-width: 440px; /* Scaled down width so it doesn't extend too far */
+  max-width: 440px;
   background-color: var(--bg-container-dark);
   border: 1px solid var(--border-subtle);
   border-radius: 30px;
-  padding: 8px 12px 8px 24px; /* Added internal padding for search text */
+  padding: 8px 12px 8px 24px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -312,17 +315,23 @@ a.btn:active {
   background-color: var(--bg-primary);
 }
 
+.py-lg-7 {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
 .filter-shop {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   gap: 15px;
-  padding: 15px 20px;
+  padding: 16px 24px; /* Increased internal padding */
   background-color: var(--bg-container-dark);
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
   margin-bottom: 30px;
+  width: 100%;
 }
 
 .showing-product p {
@@ -331,7 +340,8 @@ a.btn:active {
   margin: 0;
 }
 
-.sort-by select {
+.sort-by select,
+.sort-by select.form-control {
   background-color: var(--bg-primary);
   color: var(--text-main);
   border: 1px solid var(--border-subtle);
@@ -340,21 +350,23 @@ a.btn:active {
   font-size: 14px;
   cursor: pointer;
   appearance: none;
+  -webkit-appearance: none;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23ffffff' viewBox='0 0 16 16'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>");
   background-repeat: no-repeat;
-  background-position: right 12px center;
+  background-position: right 14px center;
   transition: border-color 0.2s ease;
+  outline: none;
 }
 
 .sort-by select:focus {
   border-color: var(--accent-secondary);
 }
 
-/* 3-column layout on desktop with max-width containment */
+/* 3-Column Grid Layout */
 .product-content #productGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px; /* Increased spacing between grid cards */
+  gap: 32px; /* Extra space between product cards */
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -367,7 +379,7 @@ a.btn:active {
   background-color: var(--bg-container-dark);
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
-  padding: 28px; /* Increased internal padding inside cards */
+  padding: 28px; /* Internal card padding for clean spacing */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -390,7 +402,7 @@ a.btn:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px; /* Added spacing under image */
+  margin-bottom: 20px;
 }
 
 .image-holder img,
@@ -448,7 +460,7 @@ a.btn:active {
   margin-top: auto;
 }
 
-/* Responsive adjustments for smaller devices */
+/* Responsive Grid Adjustments */
 @media screen and (max-width: 900px) {
   .product-content #productGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -459,6 +471,11 @@ a.btn:active {
 @media screen and (max-width: 580px) {
   .product-content #productGrid {
     grid-template-columns: 1fr;
+  }
+
+  .filter-shop {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .marlowby-search {
@@ -921,7 +938,7 @@ a.btn:active {
   font-size: 14px;
 }
 
-/* --- Responsive Media Queries --- */
+/* --- Media Queries --- */
 @media screen and (min-width: 768px) {
   .testimonial-section {
     padding-top: 6rem;

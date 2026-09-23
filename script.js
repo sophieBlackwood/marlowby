@@ -14,7 +14,7 @@ window.closeNav = function () {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Prevent right-click and dragging on images
+  // --- 1. Image Protection ---
   const protectImage = (img) => {
     if (img.dataset.protected) return;
     img.addEventListener("contextmenu", (e) => e.preventDefault());
@@ -28,11 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   protectImages();
 
-  // Re-run image protection if images are dynamically inserted
+  // Re-run protection if images are dynamically added
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       mutation.addedNodes.forEach((node) => {
-        if (node.nodeType === 1) { // Element node
+        if (node.nodeType === 1) {
           if (node.tagName === "IMG") {
             protectImage(node);
           } else {
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   observer.observe(document.body, { childList: true, subtree: true });
 
-  // Scroll to Top Button
+  // --- 2. Scroll to Top Button ---
   const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
   if (scrollToTopBtn) {
@@ -64,7 +64,107 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Blog Carousel Loop & Interactions
+  // --- 3. Product Grid Sorting & Pagination ---
+  const grid = document.getElementById("productGrid");
+  const sortSelect = document.getElementById("input-sort");
+  const showingCount = document.getElementById("showingCount");
+  const paginationContainer = document.getElementById("paginationContainer");
+
+  if (grid) {
+    const originalItems = Array.from(grid.querySelectorAll(".product-card-item"));
+    let currentItems = [...originalItems];
+    const itemsPerPage = 8;
+    let currentPage = 1;
+
+    const sortItems = (criterion) => {
+      switch (criterion) {
+        case "name-asc":
+          currentItems.sort((a, b) =>
+            (a.dataset.name || "").localeCompare(b.dataset.name || "")
+          );
+          break;
+        case "name-desc":
+          currentItems.sort((a, b) =>
+            (b.dataset.name || "").localeCompare(a.dataset.name || "")
+          );
+          break;
+        case "price-low":
+          currentItems.sort((a, b) =>
+            parseFloat(a.dataset.price || 0) - parseFloat(b.dataset.price || 0)
+          );
+          break;
+        case "price-high":
+          currentItems.sort((a, b) =>
+            parseFloat(b.dataset.price || 0) - parseFloat(a.dataset.price || 0)
+          );
+          break;
+        default:
+          currentItems = [...originalItems];
+          break;
+      }
+    };
+
+    const renderPagination = (totalPages) => {
+      if (!paginationContainer) return;
+      paginationContainer.innerHTML = "";
+
+      if (totalPages <= 1) return;
+
+      for (let i = 1; i <= totalPages; i++) {
+        const pageBtn = document.createElement("a");
+        pageBtn.href = "#";
+        pageBtn.className = `page-numbers ${i === currentPage ? "current" : ""}`;
+        pageBtn.textContent = i;
+
+        pageBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          currentPage = i;
+          renderProducts();
+
+          const section = document.querySelector(".product-collection");
+          if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+
+        paginationContainer.appendChild(pageBtn);
+      }
+    };
+
+    const renderProducts = () => {
+      const totalItems = currentItems.length;
+      const totalPages = Math.ceil(totalItems / itemsPerPage) || 1;
+
+      if (currentPage > totalPages) currentPage = totalPages;
+      if (currentPage < 1) currentPage = 1;
+
+      const startIdx = (currentPage - 1) * itemsPerPage;
+      const endIdx = Math.min(startIdx + itemsPerPage, totalItems);
+
+      grid.innerHTML = "";
+      const visibleItems = currentItems.slice(startIdx, endIdx);
+      visibleItems.forEach((item) => grid.appendChild(item));
+
+      if (showingCount) {
+        const startDisplay = totalItems === 0 ? 0 : startIdx + 1;
+        showingCount.textContent = `Showing ${startDisplay}–${endIdx} of ${totalItems} Boxes`;
+      }
+
+      renderPagination(totalPages);
+    };
+
+    if (sortSelect) {
+      sortSelect.addEventListener("change", (e) => {
+        sortItems(e.target.value);
+        currentPage = 1;
+        renderProducts();
+      });
+    }
+
+    renderProducts();
+  }
+
+  // --- 4. Blog Carousel ---
   const blogTrack = document.querySelector(".blog-card-grid");
   const blogPrev = document.querySelector(".blog-carousel-btn.prev");
   const blogNext = document.querySelector(".blog-carousel-btn.next");
@@ -75,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const gap = parseFloat(trackStyle.gap) || 0;
     const total = blogCards.length;
 
-    // Clone initial cards to the end to allow continuous sliding forward
+    // Duplicate initial cards for continuous looping
     blogCards.forEach((card) => blogTrack.appendChild(card.cloneNode(true)));
 
     let index = 0;
@@ -91,7 +191,6 @@ document.addEventListener("DOMContentLoaded", () => {
       blogTrack.style.transform = `translateX(${-offset}px)`;
     };
 
-    // Seamless loop jump handling using transitionend
     blogTrack.addEventListener("transitionend", () => {
       isTransitioning = false;
       if (index >= total) {
@@ -111,7 +210,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (isTransitioning) return;
 
       if (index === 0) {
-        // Snap to end clone set, then transition back one step
         index = total;
         updateCarousel(false);
 
@@ -134,7 +232,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateCarousel(false);
 
-    // Responsive Window Resize Handler
     let resizeTimeout;
     window.addEventListener("resize", () => {
       clearTimeout(resizeTimeout);
@@ -143,7 +240,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 100);
     });
 
-    // Touch Controls
     let startX = 0;
 
     blogTrack.addEventListener("touchstart", (e) => {

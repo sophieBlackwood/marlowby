@@ -3,33 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop Now | Marlowby</title>
-  
-  <!-- External Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caacupe+One&family=Lato:wght@400;700&family=Slabo+13px&display=swap" rel="stylesheet">
+  <title>Marlowby</title>
   <link rel="stylesheet" href="https://use.typekit.net/rig8hkd.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
-  <!-- Main Stylesheet & JS -->
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
   <link rel="icon" type="image/x-icon" href="icon_transparent.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caacupe+One&family=Slabo+13px&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <!-- Top Navigation Bar -->
   <header class="navbar">
     <a href="index.html" class="logo-link">
-      <img id="logoImage" src="Logos/logo_text2_transparent.png" alt="Marlowby logo" height="30">
+      <img id="logoImage" src="Logos/logo_text2_transparent.png" alt="Marlowby logo">
     </a>
 
     <!-- Desktop Navigation -->
-    <nav class="desktop-nav" aria-label="Main Navigation">
+    <nav class="desktop-nav">
       <a href="index.html">Home</a>
-      <a href="shop.html" class="active">Shop</a>
-      <a href="https://game-day-grill-bpa-project.square.site/#items" target="_blank" rel="noopener noreferrer" class="highlight-link">Subscribe</a>
+      <a href="shop.html">Shop</a>
+      <a href="https://game-day-grill-bpa-project.square.site/#items" target="_blank" rel="noopener noreferrer" class="btn">
+        Subscribe
+      </a>
     </nav>
 
     <!-- Mobile Hamburger Toggle -->
@@ -39,18 +36,20 @@
   </header>
 
   <!-- Mobile Side Navigation Drawer -->
-  <div id="mySidenav" class="sidenav" aria-label="Mobile Navigation">
+  <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Close menu">&times;</a>
     <a href="index.html">Home</a>
     <a href="shop.html">Shop</a>
-    <a href="https://game-day-grill-bpa-project.square.site/#items" target="_blank" rel="noopener noreferrer" class="highlight-link">Subscribe</a>
+    <a href="https://game-day-grill-bpa-project.square.site/#items" target="_blank" rel="noopener noreferrer" class="btn">
+      Subscribe
+    </a>
   </div>
 
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="video-background">
       <iframe 
-        src="https://www.youtube-nocookie.com/embed/HUEJUThL-Tw?autoplay=1&mute=1&controls=0&loop=1&playlist=HUEJUThL-Tw&playsinline=1" 
+        src="https://www.youtube-nocookie.com/embed/jR5_xr3WJxA?autoplay=1&mute=1&controls=0&loop=1&playlist=jR5_xr3WJxA&playsinline=1" 
         title="Background video" 
         allow="autoplay; encrypted-media" 
         allowfullscreen>
@@ -60,10 +59,12 @@
     <div class="hero-text">
       <h1>Marlowby</h1>
       <p class="hero-paragraph">Explore your city, one box at a time.</p>
-      <a href="shop.html" class="btn">Explore Our Boxes</a>
+      <a href="shop.html" class="btn">
+        Explore Our Boxes
+      </a>
     </div>
   </section>
-  
+
   <!-- Scoped Search Bar -->
   <section class="marlowby-search-wrapper">
     <form class="marlowby-search" role="search" id="searchForm">
@@ -143,7 +144,17 @@
     </div>
   </section>
 
-  <!-- Footer --> 
+   <!-- Buy Now Section -->
+  <section class="cta-section">
+    <div class="container text-center">
+      <h1>Ready to Explore?</h1>
+      <a href="shop.html" class="btn">
+        Buy Now!
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="site-footer box-bottom-wave">
     <div class="footer-container">
       <div class="footer-left">
@@ -156,15 +167,11 @@
         <div class="footer-contact">
           <a href="mailto:placeholder@email.com" class="footer-link">placeholder@email.com</a>
           <span class="divider">·</span>
-          <a href="tel:2081111111" class="footer-link">(208) 111-1111</a>
+          <a href="tel:(208)-111-1111" class="footer-link">(208) 111-1111</a>
         </div>
 
         <div class="footer-copyright">
-          <p class="copyright-text">&copy; 2026 Marlowby</p>
-          <p class="disclaimer-text">
-            This website exists for the purpose of a Business Professionals of America competitive event. 
-            It is not to be used for subscription service use and was made by a group of secondary students for competitive purposes.
-          </p>
+          <p>&copy; 2026 Marlowby | Business Professionals of America Competitive Event</p>
         </div>
       </div>
     </div>
@@ -174,12 +181,14 @@
   <div class="icon-bar">
     <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
     <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="mailto:blankwebsite@gmail.com" class="email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    <a href="mailto:placeholder@email.com" class="email" aria-label="Email"><i class="fas fa-envelope"></i></a>
   </div>
 
   <!-- Scroll to Top Button -->
   <button id="scrollToTopBtn" title="Go to top" aria-label="Scroll to top">
     <i class="fas fa-arrow-up"></i>
   </button>
+
+  <script src="script.js"></script>
 </body>
 </html>

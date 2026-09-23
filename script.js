@@ -1,17 +1,17 @@
-// Global navigation functions called by inline HTML onclick handlers
-function openNav() {
+// Global navigation functions attached to window for inline onclick handlers
+window.openNav = function () {
   const mySidenav = document.getElementById("mySidenav");
   if (mySidenav) {
     mySidenav.style.width = "250px";
   }
-}
+};
 
-function closeNav() {
+window.closeNav = function () {
   const mySidenav = document.getElementById("mySidenav");
   if (mySidenav) {
     mySidenav.style.width = "0";
   }
-}
+};
 
 document.addEventListener("DOMContentLoaded", () => {
   // Prevent right-click and dragging on images
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   protectImages();
 
-  // Re-run image protection efficiently if images are added dynamically later
+  // Re-run image protection if images are dynamically inserted
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       mutation.addedNodes.forEach((node) => {
@@ -51,11 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (scrollToTopBtn) {
     const handleScroll = () => {
       const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-      if (scrollPosition > 300) {
-        scrollToTopBtn.style.display = "flex";
-      } else {
-        scrollToTopBtn.style.display = "none";
-      }
+      scrollToTopBtn.style.display = scrollPosition > 300 ? "flex" : "none";
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -115,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (isTransitioning) return;
 
       if (index === 0) {
-        // Instant snap to end clone set, then transition back one step
+        // Snap to end clone set, then transition back one step
         index = total;
         updateCarousel(false);
 
@@ -147,16 +143,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 100);
     });
 
-    // Touch & Swipe Controls for Mobile
+    // Touch Controls
     let startX = 0;
-    let endX = 0;
 
     blogTrack.addEventListener("touchstart", (e) => {
       startX = e.touches[0].clientX;
     }, { passive: true });
 
     blogTrack.addEventListener("touchend", (e) => {
-      endX = e.changedTouches[0].clientX;
+      const endX = e.changedTouches[0].clientX;
       const diff = startX - endX;
 
       if (Math.abs(diff) > 40) {

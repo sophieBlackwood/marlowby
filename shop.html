@@ -3,27 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop</title>
-  <link rel="stylesheet" href="https://use.typekit.net/rig8hkd.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="icon" type="image/x-icon" href="icon_transparent.png">
-  <link rel="stylesheet" href="style.css">
+  <title>Shop Our Boxes | Marlowby</title>
+
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caacupe+One&family=Slabo+13px&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caacupe+One&family=Lato:wght@400;700&family=Slabo+13px&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/rig8hkd.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Stylesheet & Icons -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="icon_transparent.png">
+  
+  <!-- JavaScript -->
+  <script src="script.js" defer></script>
 </head>
 <body>
 
   <!-- Top Navigation Bar -->
   <header class="navbar">
     <a href="index.html" class="logo-link">
-      <img id="logoImage" src="Logos/logo_text2_transparent.png" alt="Marlowby logo">
+      <img id="logoImage" src="Logos/logo_text2_transparent.png" alt="Marlowby logo" height="30">
     </a>
 
     <!-- Desktop Navigation -->
-    <nav class="desktop-nav">
+    <nav class="desktop-nav" aria-label="Main Navigation">
       <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
+      <a href="shop.html" class="active">Shop</a>
       <a href="https://game-day-grill-bpa-project.square.site/#items" target="_blank" rel="noopener noreferrer" class="btn">
         Subscribe
       </a>
@@ -36,7 +43,7 @@
   </header>
 
   <!-- Mobile Side Navigation Drawer -->
-  <div id="mySidenav" class="sidenav">
+  <div id="mySidenav" class="sidenav" aria-label="Mobile Navigation">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Close menu">&times;</a>
     <a href="index.html">Home</a>
     <a href="shop.html">Shop</a>
@@ -64,7 +71,7 @@
 
   <!-- Scoped Search Bar -->
   <section class="marlowby-search-wrapper">
-    <form class="marlowby-search" role="search" id="searchForm">
+    <form class="marlowby-search" role="search" id="searchForm" onsubmit="event.preventDefault();">
       <div class="fx fx-gap">
         <div>
           <input type="text" id="searchInput" placeholder="Search boxes..." aria-label="Search boxes" required />
@@ -105,11 +112,11 @@
           <div class="product-content">
             <div class="row" id="productGrid">
 
-              <!-- Product Cards -->
+              <!-- Product Card 1 -->
               <div class="col-lg-3 col-md-6 mb-5 product-card-item" data-name="Boise Artisan Box" data-price="49.99">
                 <div class="product-item mx-auto">
                   <div class="image-holder text-center mb-3">
-                    <img src="images/box-boise-artisan.jpg" alt="Boise Local Artisan Box" class="img-fluid rounded product-img">
+                    <img src="images/box-boise-artisan.jpg" alt="Boise Local Artisan Box" class="img-fluid rounded product-img" onerror="replaceWithSVG(this, 'Boise Artisan', '#3B1419', '#E3A857');">
                   </div>
                   <div class="product-info text-center">
                     <span class="badge bg-secondary mb-2">Quarterly</span>
@@ -121,7 +128,117 @@
                 </div>
               </div>
 
-              <!-- Additional cards follow same structure -->
+              <!-- Product Card 2 -->
+              <div class="col-lg-3 col-md-6 mb-5 product-card-item" data-name="Snake River Adventure Box" data-price="54.99">
+                <div class="product-item mx-auto">
+                  <div class="image-holder text-center mb-3">
+                    <img src="images/box-twin-falls.jpg" alt="Snake River Adventure Box" class="img-fluid rounded product-img" onerror="replaceWithSVG(this, 'Snake River', '#1F0B0E', '#D32F2F');">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary mb-2">One-Time</span>
+                    <h3 class="m-0 fs-5">
+                      <a href="shop.html" class="text-dark text-decoration-none">Snake River Adventure Box</a>
+                    </h3>
+                    <div class="product-price text-primary fw-bold mt-1">$54.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 3 -->
+              <div class="col-lg-3 col-md-6 mb-5 product-card-item" data-name="Sun Valley Winter Discovery" data-price="59.99">
+                <div class="product-item mx-auto">
+                  <div class="image-holder text-center mb-3">
+                    <img src="images/box-sun-valley.jpg" alt="Sun Valley Winter Sampler" class="img-fluid rounded product-img" onerror="replaceWithSVG(this, 'Sun Valley', '#3B1419', '#E3A857');">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary mb-2">Seasonal</span>
+                    <h3 class="m-0 fs-5">
+                      <a href="shop.html" class="text-dark text-decoration-none">Sun Valley Winter Discovery</a>
+                    </h3>
+                    <div class="product-price text-primary fw-bold mt-1">$59.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 4 -->
+              <div class="col-lg-3 col-md-6 mb-5 product-card-item" data-name="Eastern Idaho Heritage Box" data-price="44.99">
+                <div class="product-item mx-auto">
+                  <div class="image-holder text-center mb-3">
+                    <img src="images/box-idaho-falls.jpg" alt="Eastern Idaho Heritage Box" class="img-fluid rounded product-img" onerror="replaceWithSVG(this, 'Eastern Idaho', '#1F0B0E', '#E3A857');">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary mb-2">Monthly</span>
+                    <h3 class="m-0 fs-5">
+                      <a href="shop.html" class="text-dark text-decoration-none">Eastern Idaho Heritage Box</a>
+                    </h3>
+                    <div class="product-price text-primary fw-bold mt-1">$44.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 5 -->
+              <div class="col-lg-3 col-md-6 mb-5 product-card-item" data-name="Lakeside Retreat Box" data-price="52.99">
+                <div class="product-item mx-auto">
+                  <div class="image-holder text-center mb-3">
+                    <img src="images/box-coeur-dalene.jpg" alt="Lakeside Retreat Box" class="img-fluid rounded product-img" onerror="replaceWithSVG(this, 'Lakeside Retreat', '#3B1419', '#D32F2F');">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary mb-2">Quarterly</span>
+                    <h3 class="m-0 fs-5">
+                      <a href="shop.html" class="text-dark text-decoration-none">Lakeside Retreat Box</a>
+                    </h3>
+                    <div class="product-price text-primary fw-bold mt-1">$52.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 6 -->
+              <div class="col-lg-3 col-md-6 mb-5 product-card-item" data-name="Local Coffee Roasters Box" data-price="39.99">
+                <div class="product-item mx-auto">
+                  <div class="image-holder text-center mb-3">
+                    <img src="images/box-coffee-roasters.jpg" alt="Idaho Local Coffee Roasters Box" class="img-fluid rounded product-img" onerror="replaceWithSVG(this, 'Coffee Roasters', '#1F0B0E', '#E3A857');">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary mb-2">Monthly</span>
+                    <h3 class="m-0 fs-5">
+                      <a href="shop.html" class="text-dark text-decoration-none">Local Coffee Roasters Box</a>
+                    </h3>
+                    <div class="product-price text-primary fw-bold mt-1">$39.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 7 -->
+              <div class="col-lg-3 col-md-6 mb-5 product-card-item" data-name="Payette Lake Explorer Box" data-price="48.99">
+                <div class="product-item mx-auto">
+                  <div class="image-holder text-center mb-3">
+                    <img src="images/box-mccall.jpg" alt="Payette Lake Explorer Box" class="img-fluid rounded product-img" onerror="replaceWithSVG(this, 'Payette Lake', '#3B1419', '#E3A857');">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary mb-2">Seasonal</span>
+                    <h3 class="m-0 fs-5">
+                      <a href="shop.html" class="text-dark text-decoration-none">Payette Lake Explorer Box</a>
+                    </h3>
+                    <div class="product-price text-primary fw-bold mt-1">$48.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 8 -->
+              <div class="col-lg-3 col-md-6 mb-5 product-card-item" data-name="Gate City Discovery Box" data-price="42.99">
+                <div class="product-item mx-auto">
+                  <div class="image-holder text-center mb-3">
+                    <img src="images/box-pocatello.jpg" alt="Gate City Discovery Box" class="img-fluid rounded product-img" onerror="replaceWithSVG(this, 'Gate City', '#1F0B0E', '#D32F2F');">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary mb-2">One-Time</span>
+                    <h3 class="m-0 fs-5">
+                      <a href="shop.html" class="text-dark text-decoration-none">Gate City Discovery Box</a>
+                    </h3>
+                    <div class="product-price text-primary fw-bold mt-1">$42.99</div>
+                  </div>
+                </div>
+              </div>
 
             </div>
           </div>
@@ -141,7 +258,7 @@
     </div>
   </section>
 
-   <!-- Buy Now Section -->
+  <!-- Buy Now CTA Section -->
   <section class="cta-section">
     <div class="container text-center">
       <h1>Ready to Explore?</h1>
@@ -164,11 +281,15 @@
         <div class="footer-contact">
           <a href="mailto:placeholder@email.com" class="footer-link">placeholder@email.com</a>
           <span class="divider">·</span>
-          <a href="tel:(208)-111-1111" class="footer-link">(208) 111-1111</a>
+          <a href="tel:2081111111" class="footer-link">(208) 111-1111</a>
         </div>
 
         <div class="footer-copyright">
-          <p>&copy; 2026 Marlowby | Business Professionals of America Competitive Event</p>
+          <p class="copyright-text">&copy; 2026 Marlowby</p>
+          <p class="disclaimer-text">
+            This website exists for the purpose of a Business Professionals of America competitive event. 
+            It is not to be used for subscription service use and was made by a group of secondary students for competitive purposes.
+          </p>
         </div>
       </div>
     </div>
@@ -186,6 +307,5 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <script src="script.js"></script>
 </body>
 </html>

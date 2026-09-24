@@ -64,11 +64,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- 3. Product Grid Sorting & Pagination ---
+  // --- 3. Product Grid Sorting, Search & Pagination ---
   const grid = document.getElementById("productGrid");
   const sortSelect = document.getElementById("input-sort");
+  const searchInput = document.getElementById("searchInput");
+  const searchForm = document.getElementById("searchForm");
   const showingCount = document.getElementById("showingCount");
-  const paginationContainer = document.getElementById("paginationContainer");
+  
+  // Target class or ID for pagination
+  const paginationContainer = document.getElementById("paginationContainer") || document.querySelector(".pagination");
 
   if (grid) {
     const originalItems = Array.from(grid.querySelectorAll(".product-card-item"));
@@ -76,7 +80,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const itemsPerPage = 8;
     let currentPage = 1;
 
-    const sortItems = (criterion) => {
+    // Filter by search query
+    const filterItems = () => {
+      const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
+      
+      if (!query) {
+        currentItems = [...originalItems];
+      } else {
+        currentItems = originalItems.filter((item) => {
+          const name = (item.dataset.name || item.innerText).toLowerCase();
+          return name.includes(query);
+        });
+      }
+
+      if (sortSelect && sortSelect.value) {
+        sortItems(sortSelect.value, false);
+      } else {
+        currentPage = 1;
+        renderProducts();
+      }
+    };
+
+    // Sort items
+    const sortItems = (criterion, resetPage = true) => {
       switch (criterion) {
         case "name-asc":
           currentItems.sort((a, b) =>
@@ -99,11 +125,14 @@ document.addEventListener("DOMContentLoaded", () => {
           );
           break;
         default:
-          currentItems = [...originalItems];
           break;
       }
+
+      if (resetPage) currentPage = 1;
+      renderProducts();
     };
 
+    // Render pagination controls
     const renderPagination = (totalPages) => {
       if (!paginationContainer) return;
       paginationContainer.innerHTML = "";
@@ -113,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
       for (let i = 1; i <= totalPages; i++) {
         const pageBtn = document.createElement("a");
         pageBtn.href = "#";
-        pageBtn.className = `page-numbers ${i === currentPage ? "current" : ""}`;
+        pageBtn.className = `page-numbers text-decoration-none ${i === currentPage ? "current fw-bold" : "text-dark"}`;
         pageBtn.textContent = i;
 
         pageBtn.addEventListener("click", (e) => {
@@ -131,6 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
+    // Render active products to DOM
     const renderProducts = () => {
       const totalItems = currentItems.length;
       const totalPages = Math.ceil(totalItems / itemsPerPage) || 1;
@@ -153,14 +183,23 @@ document.addEventListener("DOMContentLoaded", () => {
       renderPagination(totalPages);
     };
 
+    // Event Listeners for Filters
     if (sortSelect) {
-      sortSelect.addEventListener("change", (e) => {
-        sortItems(e.target.value);
-        currentPage = 1;
-        renderProducts();
+      sortSelect.addEventListener("change", (e) => sortItems(e.target.value));
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener("input", filterItems);
+    }
+
+    if (searchForm) {
+      searchForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        filterItems();
       });
     }
 
+    // Initial Render
     renderProducts();
   }
 

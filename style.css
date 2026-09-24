@@ -280,7 +280,6 @@ button[type="submit"]:active {
 }
 
 .marlowby-search:focus-within {
-  border-color: var(--accent-gold);
   box-shadow: 0 6px 20px rgba(227, 168, 87, 0.3);
 }
 

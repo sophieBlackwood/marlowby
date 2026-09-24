@@ -12,8 +12,7 @@
   <link rel="stylesheet" href="https://use.typekit.net/rig8hkd.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   
-  <!-- Frameworks & Custom Stylesheets -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <!-- Stylesheet & Icons -->
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="icon_transparent.png">
   
@@ -59,7 +58,7 @@
       <iframe 
         src="https://www.youtube-nocookie.com/embed/jR5_xr3WJxA?autoplay=1&mute=1&controls=0&loop=1&playlist=jR5_xr3WJxA&playsinline=1" 
         title="Background video" 
-        allow="autoplay; encrypted-media" 
+        allow="autoplay; encrypted-media; picture-in-picture" 
         allowfullscreen>
       </iframe>
     </div>
@@ -87,7 +86,7 @@
   </section>
 
   <!-- Product Section -->
-  <section class="product-collection py-lg-5">
+  <section class="product-collection py-lg-7">
     <div class="container-lg">
       <div class="row">
         <main class="col-md-12">
@@ -104,6 +103,7 @@
                 <option value="name-desc">Box Name (Z - A)</option>
                 <option value="price-low">Price (Low to High)</option>
                 <option value="price-high">Price (High to Low)</option>
+                <option value="popular">Most Popular</option>
               </select>
             </div>
           </div>
@@ -113,7 +113,7 @@
             <div class="row" id="productGrid">
 
               <!-- Product Card 1 -->
-              <div class="product-card-item col-12 col-md-6 col-lg-4 mb-4" data-name="New York City Big Apple Box" data-price="49.99">
+              <div class="product-card-item" data-name="New York City Big Apple Box" data-price="49.99">
                 <div class="product-item">
                   <div class="image-holder text-center">
                     <img src="images/box-new-york-city.jpg" alt="New York City Big Apple Box" class="img-fluid rounded product-img">
@@ -129,7 +129,7 @@
               </div>
 
               <!-- Product Card 2 -->
-              <div class="product-card-item col-12 col-md-6 col-lg-4 mb-4" data-name="Los Angeles Sunshine Box" data-price="52.99">
+              <div class="product-card-item" data-name="Los Angeles Sunshine Box" data-price="52.99">
                 <div class="product-item">
                   <div class="image-holder text-center">
                     <img src="images/box-los-angeles.jpg" alt="Los Angeles Sunshine Box" class="img-fluid rounded product-img">
@@ -144,13 +144,416 @@
                 </div>
               </div>
 
+              <!-- Product Card 3 -->
+              <div class="product-card-item" data-name="Chicago Windy City Box" data-price="48.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-chicago.jpg" alt="Chicago Windy City Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">Quarterly</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Chicago Windy City Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$48.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 4 -->
+              <div class="product-card-item" data-name="Houston Space City Spice Box" data-price="44.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-houston.jpg" alt="Houston Space City Spice Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">One-Time</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Houston Space City Spice Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$44.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 5 -->
+              <div class="product-card-item" data-name="Phoenix Sonoran Desert Box" data-price="42.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-phoenix.jpg" alt="Phoenix Sonoran Desert Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">Seasonal</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Phoenix Sonoran Desert Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$42.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 6 -->
+              <div class="product-card-item" data-name="Philadelphia Heritage Box" data-price="46.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-philadelphia.jpg" alt="Philadelphia Heritage Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">Monthly</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Philadelphia Heritage Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$46.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 7 -->
+              <div class="product-card-item" data-name="San Antonio Alamo Flavor Box" data-price="43.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-san-antonio.jpg" alt="San Antonio Alamo Flavor Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">One-Time</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">San Antonio Alamo Flavor Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$43.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 8 -->
+              <div class="product-card-item" data-name="San Diego Coastal Breeze Box" data-price="49.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-san-diego.jpg" alt="San Diego Coastal Breeze Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">Seasonal</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">San Diego Coastal Breeze Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$49.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 9 -->
+              <div class="product-card-item" data-name="Dallas Big D Luxury Box" data-price="59.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-dallas.jpg" alt="Dallas Big D Luxury Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">Quarterly</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Dallas Big D Luxury Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$59.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 10 -->
+              <div class="product-card-item" data-name="San Jose Tech Fuel Box" data-price="51.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-san-jose.jpg" alt="San Jose Tech Fuel Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">Monthly</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">San Jose Tech Fuel Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$51.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 11 -->
+              <div class="product-card-item" data-name="Austin Live Music Capital Box" data-price="47.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-austin.jpg" alt="Austin Live Music Capital Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">One-Time</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Austin Live Music Capital Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$47.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 12 -->
+              <div class="product-card-item" data-name="Jacksonville Sunshine Box" data-price="41.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-jacksonville.jpg" alt="Jacksonville Sunshine Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">Seasonal</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Jacksonville Sunshine Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$41.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 13 -->
+              <div class="product-card-item" data-name="San Francisco Bay Artisan Box" data-price="56.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-san-francisco.jpg" alt="San Francisco Bay Artisan Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">Monthly</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">San Francisco Bay Artisan Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$56.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 14 -->
+              <div class="product-card-item" data-name="Seattle Emerald Brew Box" data-price="53.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-seattle.jpg" alt="Seattle Emerald Brew Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">Quarterly</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Seattle Emerald Brew Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$53.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 15 -->
+              <div class="product-card-item" data-name="Denver Mile High Trail Box" data-price="48.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-denver.jpg" alt="Denver Mile High Trail Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">Seasonal</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Denver Mile High Trail Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$48.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 16 -->
+              <div class="product-card-item" data-name="Nashville Music City Box" data-price="49.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-nashville.jpg" alt="Nashville Music City Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">Monthly</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Nashville Music City Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$49.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 17 -->
+              <div class="product-card-item" data-name="Washington DC Capital Box" data-price="52.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-washington-dc.jpg" alt="Washington DC Capital Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">One-Time</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Washington DC Capital Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$52.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 18 -->
+              <div class="product-card-item" data-name="Las Vegas Neon Glam Box" data-price="58.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-las-vegas.jpg" alt="Las Vegas Neon Glam Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">Quarterly</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Las Vegas Neon Glam Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$58.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 19 -->
+              <div class="product-card-item" data-name="Boston Beantown Box" data-price="47.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-boston.jpg" alt="Boston Beantown Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">Seasonal</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Boston Beantown Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$47.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 20 -->
+              <div class="product-card-item" data-name="Detroit Motor City Craft Box" data-price="45.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-detroit.jpg" alt="Detroit Motor City Craft Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">One-Time</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Detroit Motor City Craft Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$45.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 21 -->
+              <div class="product-card-item" data-name="Portland Rose City Box" data-price="50.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-portland.jpg" alt="Portland Rose City Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">Monthly</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Portland Rose City Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$50.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 22 -->
+              <div class="product-card-item" data-name="Memphis Blues & BBQ Box" data-price="46.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-memphis.jpg" alt="Memphis Blues &amp; BBQ Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">Quarterly</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Memphis Blues &amp; BBQ Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$46.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 23 -->
+              <div class="product-card-item" data-name="New Orleans Big Easy Box" data-price="51.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-new-orleans.jpg" alt="New Orleans Big Easy Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">Seasonal</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">New Orleans Big Easy Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$51.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 24 -->
+              <div class="product-card-item" data-name="Atlanta Peach State Box" data-price="44.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-atlanta.jpg" alt="Atlanta Peach State Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">One-Time</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Atlanta Peach State Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$44.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 25 -->
+              <div class="product-card-item" data-name="Miami Tropical Vibe Box" data-price="53.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-miami.jpg" alt="Miami Tropical Vibe Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">Monthly</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Miami Tropical Vibe Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$53.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 26 -->
+              <div class="product-card-item" data-name="Salt Lake City Alpine Box" data-price="45.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-salt-lake-city.jpg" alt="Salt Lake City Alpine Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">Seasonal</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Salt Lake City Alpine Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$45.99</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Card 27 -->
+              <div class="product-card-item" data-name="Honolulu Aloha Spirit Box" data-price="62.99">
+                <div class="product-item">
+                  <div class="image-holder text-center">
+                    <img src="images/box-honolulu.jpg" alt="Honolulu Aloha Spirit Box" class="img-fluid rounded product-img">
+                  </div>
+                  <div class="product-info text-center">
+                    <span class="badge bg-secondary">Quarterly</span>
+                    <h3>
+                      <a href="shop.html" class="text-dark text-decoration-none">Honolulu Aloha Spirit Box</a>
+                    </h3>
+                    <div class="product-price text-primary">$62.99</div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
 
           <!-- Pagination -->
-          <nav class="navigation paging-navigation text-center pt-4" aria-label="Pagination">
-            <!-- Added id="paginationContainer" for JS binding -->
-            <div id="paginationContainer" class="pagination loop-pagination d-flex justify-content-center align-items-center gap-3">
+          <nav class="navigation paging-navigation text-center pt-4" role="navigation" aria-label="Pagination">
+            <div class="pagination loop-pagination d-flex justify-content-center align-items-center gap-3">
+              <span aria-current="page" class="page-numbers current fw-bold">1</span>
+              <a class="page-numbers text-decoration-none text-dark" href="#">2</a>
+              <a class="page-numbers text-decoration-none text-dark" href="#">3</a>
+              <a class="page-numbers text-decoration-none text-dark" href="#">&raquo;</a>
             </div>
           </nav>
 

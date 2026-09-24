@@ -104,7 +104,6 @@
                 <option value="name-desc">Box Name (Z - A)</option>
                 <option value="price-low">Price (Low to High)</option>
                 <option value="price-high">Price (High to Low)</option>
-                <option value="popular">Most Popular</option>
               </select>
             </div>
           </div>
@@ -145,18 +144,13 @@
                 </div>
               </div>
 
-              <!-- Additional cards truncated for brevity; apply `col-12 col-md-6 col-lg-4 mb-4` to remaining items -->
-
             </div>
           </div>
 
           <!-- Pagination -->
           <nav class="navigation paging-navigation text-center pt-4" aria-label="Pagination">
-            <div class="pagination loop-pagination d-flex justify-content-center align-items-center gap-3">
-              <span aria-current="page" class="page-numbers current fw-bold">1</span>
-              <a class="page-numbers text-decoration-none text-dark" href="#">2</a>
-              <a class="page-numbers text-decoration-none text-dark" href="#">3</a>
-              <a class="page-numbers text-decoration-none text-dark" href="#">&raquo;</a>
+            <!-- Added id="paginationContainer" for JS binding -->
+            <div id="paginationContainer" class="pagination loop-pagination d-flex justify-content-center align-items-center gap-3">
             </div>
           </nav>
 

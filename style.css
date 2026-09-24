@@ -612,7 +612,7 @@ button[type="submit"]:active {
 
 .blog-carousel {
   position: relative;
-  max-width: 80%;
+  max-width: 90%;
   margin: 0 auto;
 }
 
@@ -620,7 +620,6 @@ button[type="submit"]:active {
   overflow: hidden;
   width: 100%;
   padding: 1rem 0;
-  touch-action: pan-y;
 }
 
 .blog-card-grid {
@@ -649,9 +648,7 @@ button[type="submit"]:active {
 }
 
 .blog-card-inner:hover {
-  transform: translateY(-4px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
-  border-color: var(--accent-gold);
 }
 
 .box-card-image {
@@ -666,11 +663,6 @@ button[type="submit"]:active {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.blog-card-inner:hover .box-card-image img {
-  transform: scale(1.05);
 }
 
 .blog-carousel-btn {
@@ -781,7 +773,7 @@ button[type="submit"]:active {
 
 /* --- Testimonials --- */
 .testimonial-section {
-  background-color: var(--bg-secondary);
+  background-color: var(--accent-tertiary);
   padding: 3rem 1rem 15rem;
 }
 

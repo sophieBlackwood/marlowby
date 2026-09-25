@@ -645,6 +645,7 @@ button[type="submit"]:active {
   color: #ffffff;
   width: 48px;
   height: 48px;
+  font-size: 1.1rem; /* Added for Font Awesome icon sizing */
   cursor: pointer;
   z-index: 10;
   display: inline-flex;
@@ -674,25 +675,6 @@ button[type="submit"]:active {
 
 .blog-carousel-btn:active {
   transform: translateY(-50%) scale(0.98);
-}
-
-.blog-carousel-btn::before {
-  content: "";
-  display: block;
-  width: 10px;
-  height: 10px;
-  border-top: 2px solid currentColor;
-  border-right: 2px solid currentColor;
-}
-
-.blog-carousel-btn.prev::before {
-  transform: rotate(-135deg);
-  margin-left: 3px;
-}
-
-.blog-carousel-btn.next::before {
-  transform: rotate(45deg);
-  margin-right: 3px;
 }
 
 .blog-content .date {

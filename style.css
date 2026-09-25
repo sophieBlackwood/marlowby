@@ -337,7 +337,7 @@ button[type="submit"]:active {
 /* --- Shop & Products --- */
 .product-collection {
   padding: 40px 0 80px;
-  background-color: var(--accent-secondary);
+  background-color: var(--bg-primary);
 }
 
 .filter-shop {

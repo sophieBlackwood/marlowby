@@ -767,7 +767,7 @@ button[type="submit"]:active {
 
 .testimonial-title {
   text-align: center;
-  color: var(--text-dark);
+  color: var(--text-main);
   font-size: 2rem;
   margin-bottom: 2rem;
 }

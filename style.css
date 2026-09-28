@@ -7,7 +7,7 @@
   --accent-primary: #b51d28;      /* Crimson Red */
   --accent-secondary: #c84628;    /* Terracotta */
   --accent-tertiary: #486382;     /* Slate Blue */
-  --accent-gold: #E3A857;         /* Warm Gold */
+  --accent-gold: #E3A857;          /* Warm Gold */
 
   --text-main: #f7f3ec;           /* High contrast light text */
   --text-dark: #1a0b0c;           /* High contrast dark text */
@@ -17,6 +17,11 @@
   --border-subtle: rgba(227, 168, 87, 0.25);
   --overlay-dark: rgba(26, 11, 12, 0.75);
   
+  /* Component Variables */
+  --card-bg: var(--bg-container-dark);
+  --radius: 12px;
+  --transition: 0.3s ease;
+
   /* Button Specific Variables */
   --btn-bg: #b51d28;
   --btn-text: #ffffff;
@@ -256,6 +261,86 @@ button[type="submit"]:active {
   font-size: 20px;
   margin: 0 0 25px;
   color: var(--text-muted-on-dark);
+}
+
+/* --- Grid Systems --- */
+.card-grid,
+.testimonial-grid,
+.team-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.team-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  max-width: 900px;
+  margin: 2rem auto 0;
+  justify-content: center;
+}
+
+/* --- Cards & Team Members --- */
+.team-member,
+.card,
+blockquote,
+.event-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  color: var(--text-main);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover,
+.team-member:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+  border-color: var(--accent-gold);
+}
+
+.team-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1.25rem;
+  border: 2px solid var(--accent-gold);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform var(--transition);
+}
+
+.team-member:hover .team-photo {
+  transform: scale(1.05);
+}
+
+.team-member h3,
+.team-member h4 {
+  font-family: var(--font-heading-secondary);
+  font-size: 1.25rem;
+  margin: 0 0 0.25rem;
+  color: var(--text-main);
+}
+
+.team-member .role,
+.team-member .title {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--accent-gold);
+  margin-bottom: 0.75rem;
 }
 
 /* --- Search Bar --- */
@@ -645,7 +730,7 @@ button[type="submit"]:active {
   color: #ffffff;
   width: 48px;
   height: 48px;
-  font-size: 1.1rem; /* Added for Font Awesome icon sizing */
+  font-size: 1.1rem;
   cursor: pointer;
   z-index: 10;
   display: inline-flex;
@@ -773,9 +858,8 @@ button[type="submit"]:active {
 }
 
 .testimonial-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 2rem;
 }
 
 .testimonial-card {
@@ -956,14 +1040,6 @@ button[type="submit"]:active {
   .testimonial-section {
     padding-top: 6rem;
     padding-bottom: 6rem;
-  }
-
-  .testimonial-grid {
-    flex-direction: row;
-  }
-
-  .testimonial-card {
-    width: 33.333%;
   }
 
   .featured-product .top-section {

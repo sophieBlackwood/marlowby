@@ -1048,11 +1048,11 @@ body.submission-page main {
 
 body.submission-page .site-footer {
   position: fixed;
-  bottom: 0;
+  /*bottom: 0;
   left: 0;
   width: 100%;
   z-index: 90;
-  padding-top: 2rem;
+  padding-top: 2rem;*/
 }
 
 /* --- Media Queries --- */

@@ -7,7 +7,7 @@
   --accent-primary: #b51d28;      /* Crimson Red */
   --accent-secondary: #c84628;    /* Terracotta */
   --accent-tertiary: #486382;     /* Slate Blue */
-  --accent-gold: #E3A857;          /* Warm Gold */
+  --accent-gold: #E3A857;         /* Warm Gold */
 
   --text-main: #f7f3ec;           /* High contrast light text */
   --text-dark: #1a0b0c;           /* High contrast dark text */
@@ -1043,16 +1043,11 @@ body.submission-page {
 }
 
 body.submission-page main {
-  flex: 1;
+  flex: 1 0 auto;
 }
 
 body.submission-page .site-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 90;
-  padding-top: 2rem;
+  margin-top: auto;
 }
 
 /* --- Media Queries --- */

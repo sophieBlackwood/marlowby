@@ -5,6 +5,7 @@
   --text-muted: #d1c7bb;          /* Muted Secondary Text */
   --accent-red: #b51d28;          /* Primary Brand Accent */
   --accent-gold: #E3A857;         /* Accent Gold */
+  --accent-blue: #486382;         /* Accent Slate Blue */
 
   /* --- Typography --- */
   --font-heading-primary: "Caacupe One", sans-serif;
@@ -874,9 +875,9 @@ blockquote,
 
 /* --- Call to Action --- */
 .cta-section {
-  background-color: var(--bg-primary);
-  color: var(--text-main);
-  padding: 8vw 1vw 4vw;
+  background-color: var(--accent-blue);
+  color: #ffffff;
+  padding: 6rem 1rem 4rem;
   text-align: center;
 }
 

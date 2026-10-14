@@ -826,8 +826,8 @@ blockquote,
 
 /* --- Testimonials --- */
 .testimonial-section {
-  background-color: var(--bg-primary);
-  padding: 3rem 1rem 15rem;
+  background-color: #ffffff;
+  padding: 6rem 1rem 8rem;
 }
 
 .testimonial-container {
@@ -837,7 +837,7 @@ blockquote,
 
 .testimonial-title {
   text-align: center;
-  color: var(--text-main);
+  color: #1a0b0c;
   font-size: 2rem;
   margin-bottom: 2rem;
 }
@@ -864,7 +864,7 @@ blockquote,
 }
 
 .author-name {
-  color: var(--bg-primary);
+  color: #1a0b0c;
   font-weight: 700;
   text-transform: uppercase;
   margin: 0;
@@ -874,7 +874,7 @@ blockquote,
   font-size: 1.125rem;
   font-weight: 400;
   font-style: italic;
-  color: var(--bg-primary);
+  color: #6b6257;
   margin-top: 0.5rem;
   margin-bottom: 0;
 }
@@ -883,15 +883,20 @@ blockquote,
 .cta-section {
   background-color: var(--accent-blue);
   color: #ffffff;
-  padding: 8rem 1rem 6rem;
+  padding: 10rem 1rem 10rem;
   text-align: center;
   position: relative;
+  /* Top and Bottom Wave Squiggles */
   mask:
     radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
-    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
+    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x,
+    radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
   -webkit-mask:
     radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
-    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
+    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x,
+    radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
 }
 
 .cta-section h1 {

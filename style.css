@@ -322,6 +322,19 @@ blockquote,
   margin-bottom: 0.75rem;
 }
 
+/* --- Featured Boxes Section (Shop Top) --- */
+.featured-boxes-section {
+  background-color: var(--bg-primary);
+  padding: 8rem 1rem 6rem;
+  text-align: center;
+}
+
+.featured-boxes-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-main);
+}
+
 /* --- Search Bar --- */
 .marlowby-search-wrapper {
   position: relative;
@@ -399,9 +412,18 @@ blockquote,
 }
 
 /* --- Shop & Products --- */
+.shop-section {
+  background-color: var(--accent-blue);
+  padding: 20px 0 80px;
+}
+
+.shop-section .product-collection,
+.shop-section .marlowby-search-wrapper {
+  background-color: transparent;
+}
+
 .product-collection {
   padding: 40px 0 80px;
-  background-color: var(--bg-primary);
 }
 
 .filter-shop {
@@ -420,7 +442,7 @@ blockquote,
 
 .showing-product p {
   font-size: 15px;
-  color: var(--text-muted);
+  color: var(--text-main);
   margin: 0;
 }
 

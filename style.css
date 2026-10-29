@@ -995,27 +995,6 @@ blockquote,
   position: relative;
 }
 
-/* --- Blue Footer with Wave Top --- */
-.site-footer.footer-blue {
-  background-color: var(--accent-blue);
-  color: #ffffff;
-  border-top: none;
-}
-
-.site-footer.footer-blue .footer-logo a,
-.site-footer.footer-blue .footer-link {
-  color: #ffffff;
-}
-
-.site-footer.footer-blue .footer-logo a:hover,
-.site-footer.footer-blue .footer-link:hover {
-  color: var(--accent-gold);
-}
-
-.site-footer.footer-blue .footer-copyright p {
-  color: rgba(255, 255, 255, 0.8);
-}
-
 .footer-container {
   max-width: 1100px;
   margin: 0 auto;

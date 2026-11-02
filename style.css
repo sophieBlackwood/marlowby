@@ -901,7 +901,7 @@ blockquote,
   margin-bottom: 0;
 }
 
-/* --- Call to Action --- */
+/* --- Call to Action (Blue Dual Wave) --- */
 .cta-section {
   background-color: var(--accent-blue);
   color: #ffffff;
@@ -909,6 +909,9 @@ blockquote,
   text-align: center;
   position: relative;
   z-index: 4;
+
+  /* Negative top margin pulls the blue wave over the section above it */
+  margin-top: -60px;
   
   mask:
     radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,

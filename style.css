@@ -47,7 +47,7 @@ h2, h3, h4, h5, h6 {
 
 /* Accessibility Focus Ring */
 :focus-visible {
-  outline: 3px solid var(--accent-gold);
+  outline: 2px solid var(--accent-gold);
   outline-offset: 2px;
 }
 
@@ -90,7 +90,7 @@ h2, h3, h4, h5, h6 {
   font-size: 18px;
   border-radius: 4px;
   font-weight: 600;
-  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .navbar a:hover {
@@ -128,7 +128,7 @@ h2, h3, h4, h5, h6 {
   overflow-x: hidden;
   transition: width 0.3s ease;
   padding-top: 60px;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  border-right: 1px solid rgba(227, 168, 87, 0.25);
 }
 
 .sidenav a {
@@ -153,15 +153,15 @@ h2, h3, h4, h5, h6 {
   font-size: 32px;
 }
 
-/* --- High-Contrast Buttons --- */
+/* --- Clean Solid Buttons --- */
 .btn,
 a.btn,
 button[type="submit"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid transparent;
-  border-radius: 50px;
+  border: 1px solid transparent;
+  border-radius: 6px;
   padding: 8px 20px;
   color: #ffffff;
   background-color: var(--accent-red);
@@ -170,7 +170,7 @@ button[type="submit"] {
   font-weight: 700;
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.2s ease, transform 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .btn:hover,
@@ -184,7 +184,7 @@ button[type="submit"]:hover {
 .btn:active,
 a.btn:active,
 button[type="submit"]:active {
-  transform: scale(0.97);
+  background-color: #6b0c13;
 }
 
 /* --- Hero Section --- */
@@ -270,10 +270,9 @@ blockquote,
 .event-card {
   background: var(--bg-primary);
   border: 1px solid rgba(227, 168, 87, 0.25);
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 2rem;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: border-color 0.2s ease;
   color: var(--text-main);
   text-align: center;
   display: flex;
@@ -283,8 +282,6 @@ blockquote,
 
 .card:hover,
 .team-member:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
   border-color: var(--accent-gold);
 }
 
@@ -292,15 +289,9 @@ blockquote,
   width: 150px;
   height: 150px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 8px;
   margin-bottom: 1.25rem;
-  border: 2px solid var(--accent-gold);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-}
-
-.team-member:hover .team-photo {
-  transform: scale(1.05);
+  border: 1px solid var(--accent-gold);
 }
 
 .team-member h3,
@@ -349,15 +340,14 @@ blockquote,
   width: 100%;
   max-width: 440px;
   background-color: var(--bg-primary);
-  border: 1px solid rgba(227, 168, 87, 0.25);
-  border-radius: 30px;
-  padding: 8px 12px 8px 24px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid rgba(227, 168, 87, 0.35);
+  border-radius: 6px;
+  padding: 6px 12px 6px 16px;
+  transition: border-color 0.2s ease;
 }
 
 .marlowby-search:focus-within {
-  box-shadow: 0 6px 20px rgba(227, 168, 87, 0.3);
+  border-color: var(--accent-gold);
 }
 
 .fx {
@@ -393,22 +383,21 @@ blockquote,
 .marlowby-search button {
   border: 1px solid transparent;
   background: var(--accent-red);
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   color: #ffffff;
-  transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .marlowby-search button:hover {
   background-color: #8c121b;
   border-color: var(--accent-gold);
-  transform: scale(1.05);
 }
 
 /* --- Shop & Products --- */
@@ -435,7 +424,7 @@ blockquote,
   padding: 16px 24px; 
   background-color: var(--bg-primary);
   border: 1px solid rgba(227, 168, 87, 0.25);
-  border-radius: 12px;
+  border-radius: 6px;
   margin-bottom: 30px;
   width: 100%;
 }
@@ -449,9 +438,9 @@ blockquote,
 .sort-by select {
   background-color: var(--bg-primary);
   color: var(--text-main);
-  border: 1px solid rgba(227, 168, 87, 0.25);
+  border: 1px solid rgba(227, 168, 87, 0.35);
   padding: 8px 36px 8px 16px;
-  border-radius: 20px;
+  border-radius: 6px;
   font-size: 14px;
   cursor: pointer;
   appearance: none;
@@ -483,25 +472,23 @@ blockquote,
 .product-item {
   background-color: var(--bg-primary);
   border: 1px solid rgba(227, 168, 87, 0.25);
-  border-radius: 12px;
+  border-radius: 6px;
   padding: 28px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: border-color 0.2s ease;
 }
 
 .product-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
   border-color: var(--accent-gold);
 }
 
 .image-holder {
   width: 100%;
   height: 200px;
-  border-radius: 8px;
+  border-radius: 4px;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.3);
   display: flex;
@@ -515,23 +502,17 @@ blockquote,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.product-item:hover .image-holder img,
-.product-item:hover .image-holder svg {
-  transform: scale(1.05);
 }
 
 /* Badges */
 .badge {
   display: inline-block;
-  padding: 5px 12px;
+  padding: 4px 10px;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  border-radius: 12px;
+  border-radius: 4px;
   background-color: var(--accent-red);
   color: #ffffff;
   margin-bottom: 8px;
@@ -576,23 +557,23 @@ blockquote,
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 }
 
 .page-numbers {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
   background-color: var(--bg-primary);
   border: 1px solid rgba(227, 168, 87, 0.25);
   color: var(--text-main);
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .page-numbers:hover,
@@ -622,22 +603,21 @@ blockquote,
 .featured-product .top-section .image img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 6px;
   display: block;
 }
 
 .cta-star {
   position: absolute;
-  top: -15px;
-  left: -15px;
+  top: 12px;
+  left: 12px;
   background-color: var(--accent-gold);
   color: var(--bg-primary);
-  padding: 8px 14px;
-  border-radius: 20px;
+  padding: 6px 12px;
+  border-radius: 4px;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
   z-index: 5;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .featured-product .top-section .content h3 {
@@ -691,26 +671,24 @@ blockquote,
   width: 100%;
   background-color: var(--bg-primary);
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 6px;
   border: 1px solid rgba(227, 168, 87, 0.25);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.2s ease;
 }
 
 .blog-card-inner:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+  border-color: var(--accent-gold);
 }
 
 .box-card-image {
   width: 100%;
   height: 130px;
   overflow: hidden;
-  border-radius: 6px;
+  border-radius: 4px;
   margin-bottom: 8px;
 }
 
@@ -727,20 +705,17 @@ blockquote,
   transform: translateY(-50%);
   background-color: var(--accent-red);
   border: 1px solid rgba(227, 168, 87, 0.25);
-  border-radius: 50%;
+  border-radius: 4px;
   color: #ffffff;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   font-size: 1.1rem;
   cursor: pointer;
   z-index: 10;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
 .blog-carousel-btn.prev { left: -25px; }
@@ -755,12 +730,10 @@ blockquote,
   background-color: #8c121b;
   border-color: var(--accent-gold);
   color: var(--accent-gold);
-  transform: translateY(-50%) scale(1.12);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5), 0 0 12px rgba(255, 215, 0, 0.25);
 }
 
 .blog-carousel-btn:active {
-  transform: translateY(-50%) scale(0.98);
+  background-color: #6b0c13;
 }
 
 .blog-content .date {
@@ -806,7 +779,7 @@ blockquote,
 .mission-image img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .mission-text {
@@ -871,11 +844,10 @@ blockquote,
 
 .testimonial-card {
   background-color: var(--text-main);
-  border-radius: 0.5rem;
+  border-radius: 6px;
   padding: 2rem;
   text-align: center;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .star-rating {
@@ -910,7 +882,6 @@ blockquote,
   position: relative;
   z-index: 4;
 
-  /* Negative top margin pulls the blue wave over the section above it */
   margin-top: -60px;
   
   mask:
@@ -939,9 +910,9 @@ blockquote,
   z-index: 99;
   display: flex;
   flex-direction: column;
-  border-radius: 6px;
+  border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(227, 168, 87, 0.25);
 }
 
 .icon-bar a {
@@ -950,7 +921,7 @@ blockquote,
   justify-content: center;
   width: 40px;
   height: 40px;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease;
   color: #ffffff;
   font-size: 16px;
   text-decoration: none;
@@ -971,23 +942,21 @@ blockquote,
   background-color: var(--accent-red);
   color: #ffffff;
   border: 1px solid transparent;
-  border-radius: 50%;
+  border-radius: 4px;
   cursor: pointer;
   font-size: 18px;
   z-index: 1000;
   display: inline-flex;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 #scrollToTopBtn:hover {
   background-color: #8c121b;
   border-color: var(--accent-gold);
-  transform: translateY(-2px);
 }
 
 /* --- Footer --- */
@@ -1181,10 +1150,10 @@ body.submission-page .site-footer {
   }
 
   .cta-star {
-    top: -10px;
-    left: 0;
+    top: 8px;
+    left: 8px;
     font-size: 12px;
-    padding: 6px 10px;
+    padding: 4px 8px;
   }
 
   .btn,

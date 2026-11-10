@@ -319,23 +319,27 @@ blockquote,
   margin-bottom: 0.75rem;
 }
 
-/* --- Featured Box / Product Section --- */
-.featured-product,
+/* --- Featured Boxes Section (Shop Top) --- */
 .featured-boxes-section {
   background-color: var(--bg-primary);
   padding: 6rem 1rem 10rem;
+  text-align: center;
   position: relative;
   z-index: 5;
-}
-
-.featured-boxes-section {
-  text-align: center;
 }
 
 .featured-boxes-section h2 {
   font-size: 2.5rem;
   margin-bottom: 2.5rem;
   color: var(--text-main);
+}
+
+/* --- Featured Product Section (Single Box Highlight) --- */
+.featured-product {
+  padding: 6rem 1rem 10rem;
+  background-color: var(--bg-primary);
+  position: relative;
+  z-index: 5;
 }
 
 .featured-product .top-section {
@@ -477,7 +481,7 @@ blockquote,
   outline-offset: 3px;
 }
 
-/* --- Shop & Products Section --- */
+/* --- Shop & Products --- */
 .shop-section {
   background-color: var(--accent-blue);
   padding: 100px 0 100px;
@@ -536,7 +540,7 @@ blockquote,
   border-color: var(--accent-gold);
 }
 
-/* 3-Column Product Grid Layout */
+/* 3-Column Grid Layout */
 .product-content #productGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -584,6 +588,7 @@ blockquote,
   object-fit: cover;
 }
 
+/* Badges */
 .badge {
   display: inline-block;
   padding: 4px 10px;
@@ -827,6 +832,8 @@ blockquote,
 }
 
 /* --- Wave Mask Shapes --- */
+
+/* Top Wave Mask (used on Footer & Hero) */
 .box-top-wave,
 .hero-section {
   mask:
@@ -837,6 +844,7 @@ blockquote,
     radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
 }
 
+/* Bottom Wave Mask (used on Featured Boxes) */
 .box-bottom-wave {
   mask:
     radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,

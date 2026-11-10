@@ -147,7 +147,7 @@ h2, h3, h4, h5, h6 {
   font-size: 32px;
 }
 
-/* --- Organic Blob Buttons (Palette Matched & High Contrast) --- */
+/* --- Organic Blob Buttons --- */
 .btn,
 a.btn,
 button[type="submit"],
@@ -338,7 +338,7 @@ blockquote,
 .marlowby-search-wrapper {
   position: relative;
   width: 100%;
-  padding: 50px 20px 20px;
+  padding: 70px 20px 30px; /* Increased top padding from 50px to 70px */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -424,8 +424,8 @@ blockquote,
 /* --- Shop & Products --- */
 .shop-section {
   background-color: var(--accent-blue);
-  padding: 20px 0 80px;
-  margin-top: -60px;
+  padding: 80px 0 80px; /* Increased top padding from 20px to 80px */
+  margin-top: 0;        /* Removed negative top margin (-60px) to push section further down */
 }
 
 .shop-section .product-collection,
@@ -434,7 +434,7 @@ blockquote,
 }
 
 .product-collection {
-  padding: 20px 0 80px;
+  padding: 40px 0 80px; /* Increased top padding from 20px to 40px */
 }
 
 .filter-shop {

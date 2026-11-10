@@ -322,8 +322,10 @@ blockquote,
 /* --- Featured Boxes Section (Shop Top) --- */
 .featured-boxes-section {
   background-color: var(--bg-primary);
-  padding: 8rem 1rem 6rem;
+  padding: 6rem 1rem 10rem;
   text-align: center;
+  position: relative;
+  z-index: 5;
 }
 
 .featured-boxes-section h2 {
@@ -423,6 +425,7 @@ blockquote,
 .shop-section {
   background-color: var(--accent-blue);
   padding: 20px 0 80px;
+  margin-top: -60px;
 }
 
 .shop-section .product-collection,

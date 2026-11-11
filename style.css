@@ -1,11 +1,11 @@
 :root {
   /* --- Core Color Palette --- */
-  --bg-primary: #1a0b0c;          /* Base Dark Background */
-  --text-main: #f7f3ec;           /* Primary Light Text */
-  --text-muted: #e2d9cd;          /* Enhanced contrast for WCAG AA readability (formerly #d1c7bb) */
-  --accent-red: #b51d28;          /* Primary Brand Accent */
-  --accent-gold: #E3A857;         /* Accent Gold */
-  --accent-blue: #486382;         /* Accent Slate Blue */
+  --bg-primary: #1a0b0c;        
+  --text-main: #f7f3ec;       
+  --text-muted: #e2d9cd;         
+  --accent-red: #b51d28; 
+  --accent-gold: #E3A857;      
+  --accent-blue: #486382;      
 
   /* --- Typography --- */
   --font-heading-primary: "Caacupe One", sans-serif;

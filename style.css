@@ -94,10 +94,6 @@ h2, h3, h4, h5, h6 {
   letter-spacing: 2px; /* Adjusted slightly for navbar fit */
 }
 
-.navbar a.active {
-  color: var(--accent-gold);
-}
-
 .navbar a::before,
 .navbar a::after {
   backface-visibility: hidden;

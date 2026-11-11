@@ -1006,6 +1006,15 @@ blockquote,
   border-top: 1px solid rgba(227, 168, 87, 0.25);
   position: relative;
   z-index: 5;
+
+  /* test */
+  mask:
+    radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
+  -webkit-mask:
+    radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
+  z-index: 4;
 }
 
 .site-footer.box-top-wave {

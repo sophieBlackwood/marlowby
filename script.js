@@ -1,19 +1,35 @@
-// Global navigation functions attached to window for inline onclick handlers
-window.openNav = function () {
-  const mySidenav = document.getElementById("mySidenav");
-  if (mySidenav) {
-    mySidenav.style.width = "250px";
-  }
-};
-
-window.closeNav = function () {
-  const mySidenav = document.getElementById("mySidenav");
-  if (mySidenav) {
-    mySidenav.style.width = "0";
-  }
-};
-
 document.addEventListener("DOMContentLoaded", () => {
+  // --- 0. Responsive Accordion Header Navigation ---
+  const burger = document.querySelector(".burger-container");
+  const header = document.querySelector(".header");
+
+  if (burger && header) {
+    burger.onclick = function () {
+      const isOpen = header.classList.toggle("menu-opened");
+      burger.setAttribute("aria-expanded", String(isOpen));
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    };
+
+    // Close mobile menu when a navigation link is clicked
+    header.querySelectorAll("ul.menu a").forEach((link) => {
+      link.addEventListener("click", () => {
+        header.classList.remove("menu-opened");
+        burger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      });
+    });
+
+    // Close mobile menu on Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && header.classList.contains("menu-opened")) {
+        header.classList.remove("menu-opened");
+        burger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+        burger.focus();
+      }
+    });
+  }
+
   // --- 1. Image Protection ---
   const protectImage = (img) => {
     if (img.dataset.protected) return;

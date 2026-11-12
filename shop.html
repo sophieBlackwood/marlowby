@@ -15,35 +15,36 @@
 <body>
 
   <!-- Top Navigation Bar -->
-  <header class="navbar">
-    <a href="index.html" class="logo-link">
+  <header class="header">
+    <!-- Mobile Burger Toggle -->
+    <button type="button" class="burger-container" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu">
+      <span id="burger">
+        <span class="bar topBar"></span>
+        <span class="bar btmBar"></span>
+      </span>
+    </button>
+
+    <!-- Brand Logo -->
+    <a href="index.html" class="icon logo-link" aria-label="Marlowby Home">
       <img id="logoImage" src="Logos/logo_text2_transparent.png" alt="Marlowby logo">
     </a>
 
-    <!-- Desktop Navigation -->
-    <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="shop.html" class="active" aria-current="page">Shop</a>
-      <a href="https://game-day-grill-bpa-project.square.site/#items" target="_blank" rel="noopener noreferrer" class="btn">
-        Subscribe
-      </a>
-    </nav>
+    <!-- Navigation Menu -->
+    <ul class="menu" id="mainMenu" aria-label="Main navigation">
+      <li class="menu-item"><a href="index.html">Home</a></li>
+      <li class="menu-item"><a href="shop.html" class="active" aria-current="page">Shop</a></li>
+      <li class="menu-item">
+        <a href="https://game-day-grill-bpa-project.square.site/#items" target="_blank" rel="noopener noreferrer" class="btn nav-subscribe-btn">
+          Subscribe
+        </a>
+      </li>
+    </ul>
 
-    <!-- Mobile Hamburger Toggle -->
-    <button class="hamburger-menu" onclick="openNav()" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mySidenav">
-      <i class="fas fa-bars" aria-hidden="true"></i>
-    </button>
-  </header>
-
-  <!-- Mobile Side Navigation Drawer -->
-  <div id="mySidenav" class="sidenav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Close menu">&times;</a>
-    <a href="index.html">Home</a>
-    <a href="shop.html" aria-current="page">Shop</a>
-    <a href="https://game-day-grill-bpa-project.square.site/#items" target="_blank" rel="noopener noreferrer" class="btn">
-      Subscribe
+    <!-- Right Action Icon (Jumps to Boxes Grid / Slides out on mobile menu open) -->
+    <a href="#productGrid" class="shop icon icon-bag" aria-label="Browse Marlowby Boxes">
+      <i class="fas fa-box-open" aria-hidden="true"></i>
     </a>
-  </div>
+  </header>
 
   <!-- Hero Section -->
   <section class="hero-section">
@@ -505,7 +506,7 @@
     <i class="fas fa-arrow-up" aria-hidden="true"></i>
   </button>
 
- <!-- Box Preview Modal -->
+  <!-- Box Preview Modal -->
   <div id="boxPreviewModal" class="preview-modal" role="dialog" aria-modal="true" aria-labelledby="previewTitle" hidden>
     <div class="preview-modal-overlay" onclick="closePreviewModal()"></div>
     <div class="preview-modal-content">

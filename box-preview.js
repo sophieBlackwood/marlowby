@@ -1,170 +1,251 @@
-/* ==========================================================================
-   Marlowby — Box Quick-View Preview Modal (box-preview.js)
-   Automatically injects accessible "Preview Box" buttons into Featured &
-   Shop cards and populates the quick-view modal dialog.
-   ========================================================================== */
-
 const BOX_PREVIEWS = {
   nyc: {
-    description: "Experience the Big Apple with iconic artisan treats, roasted coffee, and locally crafted keepsakes.",
+    description: "Classic New York corner-store staples, dark-roasted coffee, and small-batch treats from local Manhattan and Brooklyn makers.",
     items: [
-      "Brooklyn Small-Batch Coffee",
-      "NY Black & White Cookie Tin",
-      "SoHo Artisanal Hot Sauce",
-      "Subway Token Enamel Pin"
+      "Everything Bagel Seasoning Blend",
+      "Soft-Baked Black & White Cookie",
+      "Brooklyn Dark Roast Espresso Grounds",
+      "Candied Street-Cart Style Honey Peanuts",
+      "Yellow Taxi Metal Keychain",
+      "Manhattan Skyline Postcard"
     ]
   },
   la: {
-    description: "Soak up Southern California vibes with sun-drenched snacks, citrus infusions, and Hollywood flair.",
+    description: "Sun-dried California fruit, crisp avocado-oil snacks, and small-batch apothecary goods from Southern California shops.",
     items: [
-      "Venice Beach Sea Salt Caramels",
-      "California Blood Orange Honey",
-      "Silver Lake Matcha Blend",
-      "Custom Sunset Postcard Set"
+      "Dried California Citrus & Mango Slices",
+      "Sea Salt Avocado Oil Tortilla Chips",
+      "Cold-Pressed Green Tea Bags",
+      "Coconut & Sea Salt Body Scrub",
+      "Apothecary Rose Water Face Mist",
+      "Minimalist Sunburst Enamel Pin"
     ]
   },
   chicago: {
-    description: "A taste of the Windy City featuring bold flavors, Midwest classics, and architectural charm.",
+    description: "Sweet-and-savory popcorn, tangy giardiniera, and neighborhood pantry favorites straight from Chicago.",
     items: [
-      "Chicago-Style Gourmet Popcorn",
-      "Wicker Park Dark Roast",
-      "Midwest Spiced Mustard",
-      "Lakefront Skyline Coaster"
+      "Cheddar & Caramel Popcorn Mix",
+      "Chicago-Style Pickled Pepper Giardiniera",
+      "Deep Dish Pizza Oregano & Garlic Spice Blend",
+      "Dark Chocolate Mint Melts",
+      "Chicago City Flag Vinyl Sticker",
+      "Vintage Theater Cork Coaster"
     ]
   },
   houston: {
-    description: "Big Texas hospitality packed with smoky BBQ rubs, pecan sweets, and Space City collectibles.",
+    description: "Smoky Texas barbecue rubs, roasted pecans, and bold Tex-Mex heat packed in Houston.",
     items: [
-      "Texas Pecan Pralines",
-      "H-Town Hickory BBQ Rub",
-      "Gulf Coast Jalapeño Jelly",
-      "Space City Sticker Pack"
+      "Smoked Texas Pecan Halves",
+      "Tex-Mex Hickory BBQ Spice Rub",
+      "Smoky Jalapeño Hot Sauce",
+      "Wrapped Dulce de Leche Caramels",
+      "Space City Astronaut Vinyl Sticker",
+      "Classic Cotton Bandana & Leather Key Loop"
     ]
   },
   philadelphia: {
-    description: "Brotherly love in a box—historic sweets, soft pretzel seasonings, and local roastery favorites.",
+    description: "Old City sweets, soft pretzel mustard, and local roastery favorites from Philadelphia.",
     items: [
-      "Philly Soft Pretzel Mustard",
-      "Old City Cinnamon Pecans",
-      "Liberty Bell Dark Chocolate",
-      "Rittenhouse Herbal Tea"
+      "Philly Soft Pretzel Coarse Mustard",
+      "Old City Cinnamon Roasted Pecans",
+      "Liberty Bell Dark Chocolate Bar",
+      "Rittenhouse Loose-Leaf Herbal Tea",
+      "Historic District Postcard Set"
     ]
   },
   san_francisco: {
-    description: "Fog-kissed artisan goods from the Bay Area, celebrating sourdough culture and Mission District flavors.",
+    description: "Sourdough snacks, dark cocoa, and foggy-morning teas from independent Bay Area makers.",
     items: [
-      "Ghirardelli-Style Sea Salt Bark",
-      "Mission District Salsa Verde",
-      "Bay Area Sourdough Crackers",
-      "Golden Gate Art Print"
+      "Hard Sourdough Pretzel Twists",
+      "70% Craft Dark Chocolate Bar",
+      "Bay Area French Roast Espresso Beans",
+      "Earl Grey Loose-Leaf Tea Tin",
+      "Fog & Sea Salt Linen Mist",
+      "Golden Gate Cable Car Sticker"
     ]
   },
   seattle: {
-    description: "Cozy Pacific Northwest favorites straight from Pike Place and Emerald City makers.",
+    description: "Small-batch espresso, Pacific Northwest berry preserves, and cedar-scented goods from Seattle.",
     items: [
-      "Pike Place Espresso Beans",
-      "Wild Blackberry Jam",
-      "Puget Sound Smoked Salt",
-      "Rainy Day Cedar Candle"
+      "Pike Place Whole-Bean Espresso",
+      "Wild Pacific Northwest Blackberry Jam",
+      "Puget Sound Smoked Sea Salt",
+      "Hand-Poured Cedarwood Soy Candle",
+      "Emerald City Ferry Sticker"
     ]
   },
   denver: {
-    description: "Mile High adventure packed with Rocky Mountain honey, trail snacks, and alpine botanicals.",
+    description: "High-altitude trail snacks, wildflower honey, and mountain botanicals from Colorado makers.",
     items: [
-      "Rocky Mountain Wildflower Honey",
-      "Palisade Peach Preserves",
-      "High-Altitude Trail Mix",
-      "Colorado Pine Soap Bar"
+      "Rocky Mountain Wildflower Honey Jar",
+      "Palisade Peach Fruit Preserves",
+      "High-Altitude Roasted Nut & Berry Trail Mix",
+      "Colorado Pine & Cedar Soap Bar",
+      "Front Range Trail Map Postcard"
     ]
   },
   nashville: {
-    description: "Music City soul featuring fiery hot chicken spices, sweet biscuits, and country charm.",
+    description: "Fiery hot chicken spices, sweet biscuit mixes, and Music Row treats from Nashville.",
     items: [
-      "Nashville Hot Chicken Spice Rub",
-      "Tennessee Honey Biscuit Mix",
-      "Music Row Peppermint Bark",
-      "Guitar Pick Keychain"
+      "Nashville Hot Chicken Cayenne Spice Rub",
+      "Tennessee Honey Buttermilk Biscuit Mix",
+      "Music Row Dark Chocolate Peppermint Bark",
+      "Stamped Brass Guitar Pick Keychain"
     ]
   },
   dc: {
-    description: "Capital city classics celebrating cherry blossom season and historic local makers.",
+    description: "Cherry blossom green tea, smoky half-smoke seasonings, and neighborhood favorites from Washington, D.C.",
     items: [
-      "Cherry Blossom Green Tea",
-      "Georgetown Dark Truffles",
-      "Capitol Spice Blend",
-      "Monument Sketch Notebook"
+      "Cherry Blossom Infused Green Tea",
+      "D.C. Half-Smoke Smoky Sausage Seasoning",
+      "Salted Butter Pretzel Twists",
+      "Decorative Tin of Peppermint Mints",
+      "Capital Marble Tile Coaster"
     ]
   },
   las_vegas: {
-    description: "High-roller indulgence with desert-inspired sweets, neon flair, and gourmet snacks.",
+    description: "Desert prickly-pear sweets, spiced nuts, and classic table-game keepsakes from Las Vegas.",
     items: [
-      "Mojave Desert Prickly Pear Candy",
-      "Fremont Street Toffee",
-      "Gold-Dusted Chocolate Almonds",
-      "Vintage Vegas Playing Cards"
+      "Foil-Wrapped Dark Chocolate Casino Chips",
+      "Artisanal Key Lime Mixer Syrup",
+      "Chili-Lime Roasted Almonds & Cashews",
+      "Gold-Dusted Dark Chocolate Truffles",
+      "Custom Plastic-Coated Playing Card Deck",
+      "Acrylic Dice & Neon Keyring"
     ]
   },
   new_orleans: {
-    description: "Let the good times roll with French Quarter café au lait, Cajun spices, and praline treats.",
+    description: "French Quarter chicory coffee, Creole seasonings, and pecan pralines made in New Orleans.",
     items: [
-      "French Quarter Chicory Coffee",
-      "Bourbon Street Cajun Seasoning",
-      "Creole Pecan Pralines",
-      "Jazz Brass Bookmark"
+      "French Quarter Dark Roast Chicory Coffee",
+      "Bourbon Street Creole & Cajun Seasoning",
+      "Traditional Brown-Sugar Pecan Pralines",
+      "Stamped Brass Jazz Trumpet Bookmark"
     ]
   },
   atlanta: {
-    description: "Southern comfort from the Peach State with sweet preserves, roasted pecans, and local tea.",
+    description: "Georgia peach preserves, sweet tea syrup, and roasted pecans from local Atlanta kitchens.",
     items: [
-      "Georgia Peach Jam",
-      "Sweet Tea Syrup",
-      "Roasted Cinnamon Pecans",
-      "Atlanta Skyline Magnet"
+      "Small-Batch Georgia Peach Jam",
+      "Southern Cane-Sugar Sweet Tea Syrup",
+      "Cinnamon-Glazed Georgia Pecans",
+      "Atlanta Skyline Wood Magnet"
     ]
   },
   miami: {
-    description: "Tropical Magic City flavors featuring guava pastries, Cuban espresso, and ocean-breeze scents.",
+    description: "Cuban-style dark espresso, tropical guava sweets, and key lime cookies from Miami.",
     items: [
-      "Little Havana Espresso Roast",
-      "Tropical Guava & Mango Chews",
-      "Key Lime Shortbread Cookies",
-      "Art Deco Coaster"
+      "Little Havana Dark Roast Espresso",
+      "Tropical Guava & Mango Fruit Chews",
+      "Powdered Key Lime Shortbread Cookies",
+      "South Beach Art Deco Cork Coaster"
     ]
   },
   salt_lake_city: {
-    description: "Wasatch Front treasures highlighting Utah's famous fry sauce, honey, and mountain treats.",
+    description: "Utah clover honey, signature fry sauce, and sea salt caramels from the Wasatch Front.",
     items: [
-      "Utah Beehive Clover Honey",
-      "Wasatch Gourmet Fry Sauce",
-      "Salt Flats Sea Salt Caramels",
-      "Red Rock Postcard"
+      "Utah Beehive Raw Clover Honey",
+      "Wasatch Diner-Style Fry Sauce",
+      "Great Salt Lake Sea Salt Caramels",
+      "Red Rock Canyon Illustrated Postcard"
     ]
   },
   boise: {
-    description: "City of Trees favorites featuring Idaho huckleberries, spud-inspired treats, and Treasure Valley goods.",
+    description: "Wild Idaho huckleberry jam, foothill herb rubs, and local chocolates from Boise.",
     items: [
-      "Wild Idaho Huckleberry Jam",
-      "Boise River Dark Chocolate",
-      "Treasure Valley Herb Rub",
-      "Foothills Trail Sticker"
+      "Wild Idaho Huckleberry Preserves",
+      "Boise River Dark Chocolate Bark",
+      "Treasure Valley Rosemary & Garlic Rub",
+      "Boise Foothills Vinyl Trail Sticker"
     ]
   },
   burley: {
-    description: "Hometown pride from the Magic Valley—celebrating Snake River heritage and Idaho's finest local goods.",
+    description: "Magic Valley honey, Snake River roasted nuts, and hometown treats straight from Burley, Idaho.",
     items: [
-      "Magic Valley Honey Sticks",
-      "Idaho Potato Candy Bar",
-      "Snake River Roasted Almonds",
-      "Burley Heritage Patch"
+      "Magic Valley Clover Honey Sticks",
+      "Classic Idaho Spud-Style Chocolate & Coconut Bar",
+      "Snake River Salted Roasted Almonds",
+      "Embroidered Burley Heritage Patch"
     ]
   },
   honolulu: {
-    description: "Island aloha delivered to your door with Kona coffee, macadamia nuts, and tropical fruit.",
+    description: "100% Kona coffee, roasted Hawaiian macadamia nuts, and passionfruit butter from Oahu.",
     items: [
-      "100% Kona Coffee Blend",
-      "Hawaiian Macadamia Brittle",
-      "Lilikoi (Passionfruit) Butter",
-      "Aloha Hibiscus Lei Pin"
+      "100% Kona Ground Coffee Blend",
+      "Caramelized Hawaiian Macadamia Nut Brittle",
+      "Tropical Lilikoi (Passionfruit) Fruit Butter",
+      "Enamel Hibiscus Flower Pin"
+    ]
+  },
+  /* --- Additional Cities (Ready if added to shop.html later) --- */
+  phoenix: {
+    description: "Sonoran desert prickly-pear jelly, blue corn chips, and smoky chipotle salsa from Phoenix.",
+    items: [
+      "Sonoran Prickly Pear Jelly",
+      "Stone-Ground Blue Corn Tortilla Chips",
+      "Roasted Chipotle Salsa",
+      "Mesquite Blossom Honey Sticks",
+      "Mini Terracotta Cactus Keychain"
+    ]
+  },
+  dallas: {
+    description: "Thick-cut smoked jerky, pecan pralines, and warm vanilla goods from Dallas makers.",
+    items: [
+      "Southern Caramel Pecan Pralines",
+      "Texas Wildflower Honey with Wooden Dipper",
+      "Thick-Cut Hickory Beef Jerky",
+      "Stamped Faux-Leather Coaster Set",
+      "Amber Glass Bourbon Vanilla Candle"
+    ]
+  },
+  san_jose: {
+    description: "Dark chocolate espresso beans, matcha packets, and trail snacks from Silicon Valley.",
+    items: [
+      "Dark Chocolate Covered Espresso Beans",
+      "Roasted Almond & Cashew Trail Mix",
+      "Single-Serve Ceremonial Matcha Packets",
+      "Oat & Peanut Butter Energy Bites",
+      "Microfiber Tech Screen Cloth"
+    ]
+  },
+  austin: {
+    description: "Chili-infused hot honey, smoked barbecue rub, and pecan chocolate bark from Austin.",
+    items: [
+      "Chili-Infused Texas Hot Honey",
+      "Franklin-Style Smoked Chili BBQ Rub",
+      "Whole-Bean Cold Brew Coffee",
+      "Pecan Praline Dark Chocolate Bark",
+      "Leather & Cedar Soy Tin Candle"
+    ]
+  },
+  boston: {
+    description: "Pure maple candies, cranberry-walnut trail mix, and bold breakfast tea from Boston.",
+    items: [
+      "Cape Cod Cranberry & Walnut Trail Mix",
+      "Nostalgic Molasses Candy Baked Beans",
+      "Pure New England Maple Sugar Drops",
+      "English Breakfast Black Tea Tin",
+      "Braided Cotton Sailor Knot Bracelet"
+    ]
+  },
+  detroit: {
+    description: "Michigan dark cherry preserves, rich fudge, and spiced ginger syrup from Detroit.",
+    items: [
+      "Michigan Dark Cherry Preserves",
+      "Hand-Cut Dark Chocolate Fudge Slice",
+      "Lightly Salted Roasted Cashews",
+      "Small-Batch Spiced Ginger Ale Syrup",
+      "Heavy-Duty Metal Nut & Bolt Keychain"
+    ]
+  },
+  portland: {
+    description: "Marionberry jam, roasted Oregon hazelnuts, and rose-petal black tea from Portland.",
+    items: [
+      "Rose Petal Infused Loose-Leaf Black Tea",
+      "Oregon Marionberry Preserves",
+      "Crunchy Roasted Hazelnut Brittle",
+      "Single-Origin 70% Dark Chocolate Bar",
+      "Apothecary Rosewater Facial Mist"
     ]
   }
 };
@@ -176,17 +257,21 @@ let lastFocusedElement = null;
  */
 function openPreviewModal(boxKey, title, price, imgSrc) {
   const modal = document.getElementById("boxPreviewModal");
-  if (!modal) return;
+  if (!modal) {
+    console.warn("Box preview modal (#boxPreviewModal) not found in HTML.");
+    return;
+  }
 
   lastFocusedElement = document.activeElement;
 
-  const data = BOX_PREVIEWS[boxKey] || {
-    description: "A curated collection of authentic local goods, snacks, and keepsakes.",
+  const normalizedKey = (boxKey || "").toLowerCase().trim();
+  const data = BOX_PREVIEWS[normalizedKey] || {
+    description: "A curated box of small-batch snacks, regional pantry staples, and local keepsakes.",
     items: [
-      "Artisan Local Snack",
-      "Regional Beverage Blend",
-      "Handcrafted Keepsake",
-      "City Guide Card"
+      "Small-Batch Regional Snack",
+      "Local Coffee or Tea Blend",
+      "Artisan Pantry Staple",
+      "City Keepsake & Postcard"
     ]
   };
 
@@ -203,7 +288,7 @@ function openPreviewModal(boxKey, title, price, imgSrc) {
 
   if (imgEl) {
     imgEl.src = imgSrc;
-    imgEl.alt = `${title} preview`;
+    imgEl.alt = `${title} contents preview`;
   }
 
   if (listEl) {
@@ -216,7 +301,7 @@ function openPreviewModal(boxKey, title, price, imgSrc) {
   }
 
   if (fullLinkEl) {
-    fullLinkEl.href = `box-detail.html?box=${encodeURIComponent(boxKey)}`;
+    fullLinkEl.href = `box-detail.html?box=${encodeURIComponent(normalizedKey)}`;
   }
 
   modal.hidden = false;
@@ -242,29 +327,46 @@ function closePreviewModal() {
 }
 
 /**
- * Initializes preview buttons on Shop Grid and Featured Boxes cards.
+ * Helper to extract the ?box= parameter safely from any link href.
  */
-document.addEventListener("DOMContentLoaded", () => {
-  // 1. Inject "Preview Box" buttons into the main Shop Grid cards
-  document.querySelectorAll(".product-card-item").forEach((card) => {
-    const link = card.querySelector("a[href*='box-detail.html']");
+function extractBoxKey(href) {
+  if (!href) return "";
+  try {
+    const url = new URL(href, window.location.origin);
+    return url.searchParams.get("box") || "";
+  } catch (e) {
+    const match = href.match(/[?&]box=([^&]+)/);
+    return match ? decodeURIComponent(match[1]) : "";
+  }
+}
+
+/**
+ * Initializes preview buttons on ALL Featured Boxes and Shop Grid cards.
+ */
+function initBoxPreviews() {
+  // 1. Inject "Preview Box" button into every card in #productGrid
+  const shopCards = document.querySelectorAll(".product-card-item");
+  shopCards.forEach((card) => {
+    if (card.querySelector(".preview-trigger-btn")) return; // Prevent duplicates
+
+    const link = card.querySelector("a[href*='box-detail.html']") || card.querySelector("a");
     const img = card.querySelector("img");
     const priceEl = card.querySelector(".product-price");
-    const infoContainer = card.querySelector(".product-info");
+    const infoContainer = card.querySelector(".product-info") || card.querySelector(".product-item") || card;
 
-    if (link && infoContainer) {
-      const urlParams = new URLSearchParams(link.search);
-      const boxKey = urlParams.get("box");
-      const title = card.dataset.name || link.textContent.trim();
-      const price = priceEl ? priceEl.textContent.trim() : "";
-      const imgSrc = img ? img.src : "";
+    if (link) {
+      const boxKey = extractBoxKey(link.getAttribute("href"));
+      const title = card.dataset.name || link.textContent.trim() || "City Box";
+      const price = priceEl ? priceEl.textContent.trim() : (card.dataset.price ? `$${card.dataset.price}` : "");
+      const imgSrc = img ? img.getAttribute("src") : "";
 
       const previewBtn = document.createElement("button");
       previewBtn.type = "button";
       previewBtn.className = "preview-trigger-btn";
       previewBtn.textContent = "Preview Box";
       previewBtn.setAttribute("aria-label", `Preview ${title}`);
-      previewBtn.addEventListener("click", () => {
+      previewBtn.addEventListener("click", (e) => {
+        e.preventDefault();
         openPreviewModal(boxKey, title, price, imgSrc);
       });
 
@@ -272,68 +374,75 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 2. Inject "Quick Preview" buttons into the Featured Boxes section cards
-  document.querySelectorAll(".featured-boxes .card").forEach((card) => {
-    const link = card.querySelector("a[href*='box-detail.html']");
+  // 2. Inject "Preview Box" button into every card in .featured-boxes
+  const featuredCards = document.querySelectorAll(".featured-boxes .card, .featured-boxes-section .card");
+  featuredCards.forEach((card) => {
+    if (card.querySelector(".preview-trigger-btn")) return; // Prevent duplicates
+
+    const link = card.querySelector("a[href*='box-detail.html']") || card.querySelector("a");
     const img = card.querySelector("img");
-    const titleEl = card.querySelector("h3");
+    const titleEl = card.querySelector("h3, h4");
 
     if (link) {
-      const urlParams = new URLSearchParams(link.search);
-      const boxKey = urlParams.get("box");
+      const boxKey = extractBoxKey(link.getAttribute("href"));
       const title = titleEl ? titleEl.textContent.trim() : "Featured Box";
 
-      // Pull the matching price from the shop grid if available
+      // Match price from the shop grid if present
       const matchingShopCard = document
         .querySelector(`.product-card-item a[href*="box=${boxKey}"]`)
         ?.closest(".product-card-item");
-      const price = matchingShopCard
+      const price = matchingShopCard && matchingShopCard.querySelector(".product-price")
         ? matchingShopCard.querySelector(".product-price").textContent.trim()
         : "$49.99";
-      const imgSrc = img ? img.src : "";
+      const imgSrc = img ? img.getAttribute("src") : "";
 
       const previewBtn = document.createElement("button");
       previewBtn.type = "button";
       previewBtn.className = "preview-trigger-btn";
-      previewBtn.textContent = "Quick Preview";
-      previewBtn.setAttribute("aria-label", `Quick preview ${title}`);
-      previewBtn.addEventListener("click", () => {
+      previewBtn.textContent = "Preview Box";
+      previewBtn.setAttribute("aria-label", `Preview ${title}`);
+      previewBtn.addEventListener("click", (e) => {
+        e.preventDefault();
         openPreviewModal(boxKey, title, price, imgSrc);
       });
 
       card.appendChild(previewBtn);
     }
   });
+}
 
-  // 3. Close modal when pressing the Escape key
-  document.addEventListener("keydown", (event) => {
-    const modal = document.getElementById("boxPreviewModal");
-    if (event.key === "Escape" && modal && !modal.hidden) {
-      closePreviewModal();
-    }
-  });
+// Run initialization as soon as DOM is ready (works whether script is in <head> or <body>)
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initBoxPreviews);
+} else {
+  initBoxPreviews();
+}
 
-  // 4. Trap Tab focus inside the modal while open (WCAG accessibility)
+// Close modal on Escape key & trap Tab focus inside modal
+document.addEventListener("keydown", (event) => {
   const modal = document.getElementById("boxPreviewModal");
-  if (modal) {
-    modal.addEventListener("keydown", (event) => {
-      if (event.key !== "Tab" || modal.hidden) return;
+  if (!modal || modal.hidden) return;
 
-      const focusable = modal.querySelectorAll(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      );
-      if (focusable.length === 0) return;
+  if (event.key === "Escape") {
+    closePreviewModal();
+    return;
+  }
 
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
+  if (event.key === "Tab") {
+    const focusable = modal.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    if (focusable.length === 0) return;
 
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
-    });
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
   }
 });

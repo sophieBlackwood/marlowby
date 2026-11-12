@@ -79,6 +79,7 @@ textarea:focus-visible {
 }
 
 /* --- Header & Navigation --- */
+/* --- Header & Navigation --- */
 .navbar {
   display: flex;
   align-items: center;
@@ -101,7 +102,6 @@ textarea:focus-visible {
 }
 
 .navbar a {
-  position: relative;
   color: var(--text-main);
   padding: 10px 16px;
   min-height: 44px;
@@ -111,44 +111,13 @@ textarea:focus-visible {
   font-size: 18px;
   border-radius: 4px;
   font-weight: 600;
-  letter-spacing: 0;
-  transition: color 0.2s ease, letter-spacing 280ms ease-in-out, background-color 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .navbar a:hover,
-.navbar a:active {
-  color: #ffffff;
-  letter-spacing: 2px;
-}
-
+.navbar a:active,
 .navbar a.active {
   color: var(--accent-gold);
-}
-
-.navbar a::before,
-.navbar a::after {
-  backface-visibility: hidden;
-  border: 1px solid rgba(255, 255, 255, 0);
-  bottom: 0px;
-  content: " ";
-  display: block;
-  margin: 0 auto;
-  position: relative;
-  transition: all 280ms ease-in-out;
-  width: 0;
-}
-
-.navbar a:hover::before,
-.navbar a:hover::after {
-  backface-visibility: hidden;
-  border-color: var(--accent-gold);
-  transition: width 350ms ease-in-out;
-  width: 70%;
-}
-
-.navbar a:hover::before {
-  bottom: auto;
-  top: 0;
 }
 
 .navbar img {

@@ -15,34 +15,36 @@
 <body>
 
   <!-- Top Navigation Bar -->
-  <header class="navbar">
-    <a href="index.html" class="logo-link">
+  <header class="header">
+    <!-- Mobile Burger Toggle -->
+    <button type="button" class="burger-container" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mainMenu">
+      <span id="burger">
+        <span class="bar topBar"></span>
+        <span class="bar btmBar"></span>
+      </span>
+    </button>
+
+    <!-- Brand Logo -->
+    <a href="index.html" class="icon logo-link" aria-label="Marlowby Home">
       <img id="logoImage" src="Logos/logo_text2_transparent.png" alt="Marlowby logo">
     </a>
 
-    <nav class="desktop-nav">
-      <a href="index.html">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="https://game-day-grill-bpa-project.square.site/#items" target="_blank" rel="noopener noreferrer" class="btn">
-        Subscribe
-      </a>
-    </nav>
+    <!-- Navigation Menu -->
+    <ul class="menu" id="mainMenu">
+      <li class="menu-item"><a href="index.html" class="active" aria-current="page">Home</a></li>
+      <li class="menu-item"><a href="shop.html">Shop</a></li>
+      <li class="menu-item">
+        <a href="https://game-day-grill-bpa-project.square.site/#items" target="_blank" rel="noopener noreferrer" class="btn nav-subscribe-btn">
+          Subscribe
+        </a>
+      </li>
+    </ul>
 
-    <!-- Mobile Hamburger Toggle -->
-    <button class="hamburger-menu" onclick="openNav()" aria-label="Open mobile menu">
-      <i class="fas fa-bars"></i>
-    </button>
-  </header>
-
-  <!-- Mobile Side Navigation Drawer -->
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" aria-label="Close menu">&times;</a>
-    <a href="index.html">Home</a>
-    <a href="shop.html">Shop</a>
-    <a href="https://game-day-grill-bpa-project.square.site/#items" target="_blank" rel="noopener noreferrer" class="btn">
-      Subscribe
+    <!-- Right Action Icon (Slides out on mobile menu open) -->
+    <a href="shop.html#productGrid" class="shop icon icon-bag" aria-label="Browse Marlowby Boxes">
+      <i class="fas fa-box-open" aria-hidden="true"></i>
     </a>
-  </div>
+  </header>
 
   <!-- Hero Section -->
   <section class="hero-section">

@@ -79,7 +79,6 @@ textarea:focus-visible {
 }
 
 /* --- Header & Navigation --- */
-/* --- Header & Navigation --- */
 .navbar {
   display: flex;
   align-items: center;
@@ -121,7 +120,7 @@ textarea:focus-visible {
 }
 
 .navbar img {
-  height: 32px;
+  height: 64px;
   width: auto;
   display: block;
 }

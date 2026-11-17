@@ -358,16 +358,10 @@ blockquote,
   position: relative;
   z-index: 4;
 
-  /* Dual Top & Bottom Wave Mask (Matches .cta-section) */
   mask:
-    radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
-    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x,
     radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
     radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
-
   -webkit-mask:
-    radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
-    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x,
     radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
     radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
 }
@@ -1056,16 +1050,12 @@ blockquote,
   margin-top: -60px;
   
   mask:
-    radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
-    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x,
     radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
     radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
-  
   -webkit-mask:
-    radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
-    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x,
     radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
     radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
+  z-index: 4;
 }
 
 .cta-section h1 {

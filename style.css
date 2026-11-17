@@ -352,27 +352,24 @@ blockquote,
 
 /* --- Subscription Plans Section --- */
 .subscription-section {
-  background-color: var(--bg-primary);
-  padding: 6rem 1rem;
+  background-color: var(--accent-blue);
+  padding: 12rem 1rem;
+  margin-top: -60px;
   position: relative;
-  z-index: 5;
-
-   mask:
-    radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
-    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
-  -webkit-mask:
-    radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
-    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x;
-}
-
-.box-bottom-wave {
-  mask:
-    radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
-    radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
-  -webkit-mask:
-    radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
-    radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
   z-index: 4;
+
+  /* Dual Top & Bottom Wave Mask (Matches .cta-section) */
+  mask:
+    radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x,
+    radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
+
+  -webkit-mask:
+    radial-gradient(213.01px at 50% calc(100% - 291.6px), #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% calc(100% + 183.6px), #0000 99%, #000 101%) 50% calc(100% - 108px)/432px 100% repeat-x,
+    radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) calc(50% - 216px) 0/432px 100%,
+    radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) 50% 108px/432px 100% repeat-x;
 }
 
 .subscription-section h2 {
@@ -386,11 +383,7 @@ blockquote,
   margin: 0 auto 3rem;
   font-size: 1.125rem;
   line-height: 1.6;
-  color: var(--text-muted);
-}
-
-.subscription-grid {
-  align-items: stretch;
+  color: var(--text-main);
 }
 
 .plan-card {

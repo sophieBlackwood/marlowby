@@ -359,21 +359,21 @@ blockquote,
   z-index: 4;
 }
 
-/* Cream (#f7f3ec) wave color sitting behind the cutout */
+/* Slate Blue section background */
 .subscription-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: #f7f3ec;
+  background-color: var(--accent-blue);
   z-index: -2;
 }
 
-/* Slate Blue section background with the flipped wave at the top */
+/* Cream (#f7f3ec) inverted top wave sitting over the blue */
 .subscription-section::after {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: var(--accent-blue);
+  background-color: #f7f3ec;
   z-index: -1;
   transform: scaleY(-1);
 
@@ -398,7 +398,6 @@ blockquote,
   line-height: 1.6;
   color: var(--text-main);
 }
-
 .plan-card {
   justify-content: space-between;
   padding: 2.25rem 1.75rem;

@@ -1009,7 +1009,7 @@ blockquote,
 
 /* --- Testimonials --- */
 .testimonial-section {
-  background-color: #ffffff;
+  background-color: var(--text-main);
   padding: 6rem 1rem 12rem;
 }
 

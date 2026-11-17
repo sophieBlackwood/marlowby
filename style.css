@@ -352,26 +352,31 @@ blockquote,
 
 /* --- Subscription Plans Section --- */
 .subscription-section {
-  background-color: var(--bg-primary);
+  background-color: transparent;
   padding: 12rem 1rem;
   margin-top: -60px;
   position: relative;
   z-index: 4;
 }
 
+/* Cream (#f7f3ec) wave color sitting behind the cutout */
 .subscription-section::before {
   content: "";
   position: absolute;
   inset: 0;
+  background-color: var(--bg-primary);
   z-index: -2;
 }
 
+/* Slate Blue section background with the top wave phase-shifted (inverted) */
 .subscription-section::after {
   content: "";
   position: absolute;
   inset: 0;
+  background-color:  var(--bg-primary);
   z-index: -1;
-  
+
+  /* Swapped the 50% and calc(50% - 216px) positions to invert the wave */
   mask:
     radial-gradient(213.01px at 50% 291.6px, #000 99%, #0000 101%) 50% 0/432px 100%,
     radial-gradient(213.01px at 50% -183.6px, #0000 99%, #000 101%) calc(50% - 216px) 108px/432px 100% repeat-x;

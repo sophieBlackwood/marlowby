@@ -1,5 +1,4 @@
 :root {
-  /* --- Core Color Palette --- */
   --bg-primary: #1a0b0c;          /* Base Dark Background */
   --text-main: #f7f3ec;           /* Primary Light Text */
   --text-muted: #e2d9cd;          /* Enhanced contrast for WCAG AA readability */
